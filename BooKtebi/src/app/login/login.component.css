@@ -1,6 +1,7 @@
 .sky_bg{
 	position: absolute;
 	right: 0px;
+	height:100%;
 
 }
 
@@ -9,7 +10,7 @@
 	position: absolute;
 	width: 864px;
 	height: 916px;
-	left: 60%;
+	left: 59%;
 	top: 56px;
 
 }
