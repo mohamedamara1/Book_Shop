@@ -1,179 +1,183 @@
-.sky_bg{
-	position: absolute;
-	right: 0px;
-	height:100%;
-
+.sky_bg {
+ /* position: absolute;
+  right: 0px;
+  height: 100%;*/
 }
 
 /* tyVector 1 */
 .suitman {
-	position: absolute;
-	width: 864px;
-	height: 916px;
-	right: 0%;
-	top: 56px;
-	background-color:;
+  /*position: absolute;
+  width: 864px;
+  height: 916px;
+  right: 0%;
+  top: 56px;*/
+}
+/*
+#wrapper {
+  position: relative;
+}
+
+#fond, #man {
+  opacity: 1;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translateY(-30%) translateX(-50%);
+}
+*/
+
+.card {
+  background-color: ;
+/*  position: absolute;
+  width: 576px;
+  height: 562px;
+  left: 53px;
+  top: 328px;*/
+     margin-left:auto;
+   margin-right:auto;
+   display:block;
 
 }
 
-.card{
-	background-color: ;
-	position: absolute;
-	width: 576px;
-	height: 562px;
-	left: 53px;
-	top: 328px;
+input[type="email"],
+input[type="password"] {
+  display: block;
+  /*width: 500px;
+  padding: 5px;
+  margin-bottom: 5px;*/
+  font-size: 1.5em;
+  border: none;
+  border-bottom: 1px solid #88aad1;
+  left: 10%;
 
+  font-family: "Helvetica", FontAwesome, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 108.1%;
+  /* identical to box height, or 39px */
+  letter-spacing: 0.1em;
+  outline: none;
+  color: #939393;
+}
+@media (max-width:480px)  { .card{border:none;} }
+
+.emailfield {
+  /*position: absolute;
+  top: 1.96%;
+  bottom: 91.1%;*/
 }
 
-
-input[type="email"] ,input[type="password"]{
-    display:block;
-    width:500px;
-    padding:5px;
-    margin-bottom:5px;
-    font-size:1.5em;
-    border:none;
-	border-bottom: 1px solid #88AAD1;
-	left: 10%;
-
-
-    font-family: 'Helvetica', FontAwesome, sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 36px;
-	line-height: 108.1%;
-	/* identical to box height, or 39px */
-	letter-spacing: 0.1em;
-	outline:none;
-	color: #939393;
-
+.fontAwesome {
+  font-family: "Helvetica", FontAwesome, sans-serif;
 }
 
-.emailfield{
-
-	position: absolute;
-	top: 1.96%;
-	bottom: 91.1%;
-
+.passwordfield {
+  /*position: absolute;
+  top: 29%;
+  bottom: 64.06%;*/
 }
 
-.fontAwesome{ font-family: 'Helvetica', FontAwesome, sans-serif; }
+#remembertext {
+  /*position: absolute;
+  left: 13%;
+  top: 44.48%;
+  bottom: 50.89%;*/
 
-.passwordfield{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 108.1%;
+  /* identical to box height, or 26px */
+  letter-spacing: 0.1em;
 
-	position: absolute;
-	top: 29%;
-	bottom: 64.06%;
+  color: #939393;
 }
 
-#remembertext{
-	position: absolute;
-	left: 13%;
-	top: 44.48%;
-	bottom: 50.89%;
+#rememberme {
+  /* connected_checkbox */
 
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	line-height: 108.1%;
-	/* identical to box height, or 26px */
-	letter-spacing: 0.1em;
-
-color: #939393;
+ /* position: absolute;
+  left: 52.57%;
+  top: 44.48%;
+  bottom: 50%;
+*/
+  border: 3px solid #88aad1;
+  border-radius: 4px;
 }
 
-#rememberme{
-	/* connected_checkbox */
+.loginbutton {
+  /*position: absolute;
+  left: 20.15%;
+  right: 8.51%;
+  top: 60.14%;
+  bottom: 25.62%;
 
-	position: absolute;
-	left: 52.57%;
-	top: 44.48%;
-	bottom: 50%;
-
-	border: 3px solid #88AAD1;
-	border-radius: 4px;
-
+  width: 430px;
+  height: 80px;
+*/
+  background: linear-gradient(90deg, #c8e8e4 1.6%, #6a9e98 100%);
+  box-shadow: 0px 7px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 192px;
 }
 
-.loginbutton{
-	position: absolute;
-	left: 20.15%;
-	right: 8.51%;
-	top: 60.14%;
-	bottom: 25.62%;
+.logintext {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 108.1%;
+  /* or 52px */
+  letter-spacing: 0.05em;
 
-	width:430px;
-	height:80px;
-
-	background: linear-gradient(90deg, #C8E8E4 1.6%, #6A9E98 100%);
-	box-shadow: 0px 7px 6px rgba(0, 0, 0, 0.25);
-	border-radius: 192px;
+  color: #ffffff;
 }
 
-.logintext{
+.forgotpassword {
+ /* position: absolute;
+  left: 42.24%;
+  top: 76.69%;
+  bottom: 19.4%;
+*/
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 108.1%;
+  /* identical to box height, or 22px */
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-decoration-line: underline;
 
-
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 48px;
-	line-height: 108.1%;
-	/* or 52px */
-	letter-spacing: 0.05em;
-
-	color: #FFFFFF;
-
-
-
+  color: #939393;
 }
 
-.forgotpassword{
-	position: absolute;
-left: 42.24%;
-top: 76.69%;
-bottom: 19.4%;
+.line-3 {
+ /* position: absolute;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 108.1%;
-/* identical to box height, or 22px */
-text-align: center;
-letter-spacing: 0.1em;
-text-decoration-line: underline;
-
-color: #939393;
+  left: 20.02%;
+  right: 8.67%;
+  top: 91.64%;
+  bottom: 8.36%;*/
+  border: none;
+  border-bottom: 1px solid #88aad1;
 }
 
-.line-3{
-	position: absolute;
+.donthave {
+  /*position: absolute;
+  left: 31.43%;
+  right: 8.51%;
+  top: 94.13%;
+  bottom: 0%;
+*/
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 108.1%;
+  /* or 16px */
+  letter-spacing: 0.05em;
 
-	left: 20.02%;
-	right: 8.67%;
-	top: 91.64%;
-	bottom: 8.36%;
-	border:none;
-	border-bottom:1px solid #88AAD1;
+  color: #a1a4b2;
 }
-
-.donthave{
-position: absolute;
-left: 31.43%;
-right: 8.51%;
-top: 94.13%;
-bottom: 0%;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 15px;
-line-height: 108.1%;
-/* or 16px */
-letter-spacing: 0.05em;
-
-color: #A1A4B2;
-}
-
