@@ -27,7 +27,6 @@
 */
 
 .card {
-  background-color: ;
 /*  position: absolute;
   width: 576px;
   height: 562px;
@@ -37,7 +36,15 @@
    margin-right:auto;
    display:block;
 
+
 }
+
+  
+@media (max-width:480px)  { /* smartphones, Android phones, landscape iPhone */
+  .card{
+    border:none;
+  }
+ }
 
 input[type="email"],
 input[type="password"] {
@@ -53,7 +60,7 @@ input[type="password"] {
   font-family: "Helvetica", FontAwesome, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 34px;
+  font-size: 28px;
   line-height: 108.1%;
   /* identical to box height, or 39px */
   letter-spacing: 0.1em;
@@ -181,3 +188,21 @@ input[type="password"] {
 
   color: #a1a4b2;
 }
+/*
+.wrapper{
+  position: relative;
+  z-index:0;
+}
+#fond{
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:1;
+}
+#man{
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:2;
+}
+*/
