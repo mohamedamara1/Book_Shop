@@ -27,7 +27,6 @@
 */
 
 .card {
-  background-color: ;
 /*  position: absolute;
   width: 576px;
   height: 562px;
@@ -37,7 +36,15 @@
    margin-right:auto;
    display:block;
 
+
 }
+
+  
+@media (max-width:480px)  { /* smartphones, Android phones, landscape iPhone */
+  .card{
+    border:none;
+  }
+ }
 
 input[type="email"],
 input[type="password"] {
@@ -53,7 +60,7 @@ input[type="password"] {
   font-family: "Helvetica", FontAwesome, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 34px;
+  font-size: 28px;
   line-height: 108.1%;
   /* identical to box height, or 39px */
   letter-spacing: 0.1em;
@@ -113,11 +120,12 @@ input[type="password"] {
   right: 8.51%;
   top: 60.14%;
   bottom: 25.62%;
+/* Rectangle 4 */
 
-  width: 430px;
-  height: 80px;
-*/
-  background: linear-gradient(90deg, #c8e8e4 1.6%, #6a9e98 100%);
+
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+background: linear-gradient(0deg, #1BA1DA, #1BA1DA);
   box-shadow: 0px 7px 6px rgba(0, 0, 0, 0.25);
   border-radius: 192px;
 }
@@ -181,3 +189,50 @@ input[type="password"] {
 
   color: #a1a4b2;
 }
+/*
+.wrapper{
+  position: relative;
+  z-index:0;
+}*/
+#fond{
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:1;
+
+}
+#man{
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:2;
+
+}
+
+@media (max-width:992px)  { /* smartphones, Android phones, landscape iPhone */
+  .card{
+    border:none;
+  }
+  #man{
+  position:initial;
+  right:initial;
+  top:initial;
+  z-index:initial;
+  }
+  .cardcol{
+    height:initial!important;
+  }
+ }
+
+ @media (min-width:992px){
+  #man{
+    height:90%;
+    width: 80%;
+    margin:auto;
+    display:block;
+  }
+  .card{
+    margin-top:23%!important;
+  }
+
+ }
