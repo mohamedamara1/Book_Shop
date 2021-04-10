@@ -1,0 +1,29 @@
+.hero {
+  margin-top: 50px;
+  .hero-title {
+    font-size: 4vw;
+    font-weight: bold;
+    span {
+      color: #ff6eb7;
+    }
+  }
+  .hero-button {
+    margin-top: 60px;
+    a {
+      padding: 1vw 2vw;
+      background-color: #7a5cffb3;
+      text-align: center;
+      font-weight: 600;
+      color: #ffffff;
+      border-radius: 13px;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        border: 1px solid #7a5cffb3;
+        color: #7a5cffb3;
+        background-color: #ffff;
+      }
+    }
+  }
+}
