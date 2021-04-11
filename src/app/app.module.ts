@@ -12,10 +12,12 @@ import { NewProductsComponent } from './components/new-products/new-products.com
 import { ProductComponent } from './components/product/product.component';
 import { BestSellingComponent } from './components/best-selling/best-selling.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent, ProductComponent, BestSellingComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule,RouterModule],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent, ProductComponent, BestSellingComponent, FooterComponent, SignupComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule,RouterModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,87 @@
+<div class="signup">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container">
+        <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="signupForm">
+          <div class="row">
+            <div class="input-wrapper col-md-6">
+              <input
+                type="text"
+                name="fisrtName"
+                class="form-control"
+                placeholder="Fisrt Name"
+                formControlName="first_name"
+              />
+            </div>
+            <div class="input-wrapper col-md-6">
+              <input
+                type="text"
+                name="lastName"
+                class="form-control"
+                placeholder="Last Name"
+                formControlName="last_name"
+              />
+            </div>
+            <div class="input-wrapper col-md-12">
+              <input
+                type="number"
+                name="phone"
+                class="form-control"
+                placeholder="Phone Number"
+                formControlName="phone"
+              />
+            </div>
+            <div class="input-wrapper col-md-12">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="E-mail Adress"
+                formControlName="email"
+              />
+            </div>
+            <div class="input-wrapper col-md-12">
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </div>
+            <div class="input-wrapper radio-wrapper col-md-12">
+              <label class="container">
+                <span
+                  class="label-text"
+                  style="font-size: 14px; color: #939393"
+                >
+                  I agree to the Terms Privacy Policy</span
+                >
+                <input
+                  type="checkbox"
+                  id="policy"
+                  name="policy"
+                  value="true"
+                  class="policy-input"
+                  style="margin-left: 40px"
+                  formControlName="policy"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="signup-btn">Sign Up</button>
+          <div class="signin-wrapper mt-5">
+            <hr />
+            <p>ALREADY HAVE AN ACCOUNT ? <a href=""> SIGN IN</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="hero">
+        <img src="../../../assets/img/signup-hero.png" alt="hero" />
+      </div>
+    </div>
+  </div>
+</div>
