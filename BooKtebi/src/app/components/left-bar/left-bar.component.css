@@ -1,0 +1,67 @@
+.profile-img{
+  /* Frame 6 */
+
+width: 250px;
+height: 250px;
+
+border-radius: 200px;
+
+}
+.general-link{
+  /* General Settings */
+
+width: 233px;
+height: 31px;
+
+top:3351;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 26px;
+line-height: 31px;
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #000000;
+
+
+}
+
+.payment-link{
+  /* Payement Method */
+
+width: 250px;
+height: 31px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 26px;
+line-height: 31px;
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #000000;
+
+
+}
+
+.del-acc-link{
+  /* Delete Account */
+
+width: 214px;
+height: 31px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 26px;
+line-height: 31px;
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #000000;
+
+
+}

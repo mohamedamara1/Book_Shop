@@ -1,0 +1,74 @@
+.label-text{
+  /* user name */
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 26px;
+line-height: 31px;
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #000000;
+
+}
+
+/* Rectangle 262 */
+.input-box{
+  width: 389px;
+  height: 43px;
+
+  background: #FDFCFC;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+}
+
+.title{
+  width: 287px;
+height: 42px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 35px;
+line-height: 42px;
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #EE3C3C;
+}
+
+.save-button{
+  /* Group 54 */
+
+position: absolute;
+width: 397px;
+height: 78px;
+
+
+
+/* Rectangle 269 */
+
+
+
+background-color: #08A4C7;
+border-radius: 13px;
+
+
+
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 36px;
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #FEF5F5;
+
+
+}
+
