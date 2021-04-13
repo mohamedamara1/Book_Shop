@@ -4,7 +4,8 @@ import { DeleteAccountComponent } from './components/delete-account/delete-accou
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { GeneralsettingsComponent } from './pages/generalsettings/generalsettings.component';
-
+import { ItemComponent } from './components/item/item.component';
+import { BasketComponent } from './components/basket/basket.component';
 const routes: Routes = [
  // {path:'', component:GeneralsettingsComponent},
   {
@@ -17,6 +18,8 @@ const routes: Routes = [
         ]
 
   },
+  { path: 'item', component: ItemComponent },
+  { path: 'basket', component: BasketComponent },
 
 ];
 
