@@ -4,11 +4,21 @@ import { DeleteAccountComponent } from './components/delete-account/delete-accou
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { GeneralsettingsComponent } from './pages/generalsettings/generalsettings.component';
+import { HomeComponent } from "./pages/home/home.component";
+import { SignupComponent } from "./pages/signup/signup.component";
 
 const routes: Routes = [
  // {path:'', component:GeneralsettingsComponent},
-  {
-    path:'generalsettings',
+  
+{
+    path: "",
+    component: HomeComponent,
+  },
+{
+    path: "signup",
+    component: SignupComponent,
+  },
+    {path:'generalsettings',
    component:GeneralsettingsComponent,
   children: [
     {path:'profile-settings', component:ProfileSettingsComponent},

@@ -20,6 +20,7 @@ import { LeftBarComponent } from './components/left-bar/left-bar.component';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { DeleteAccountComponent } from './components/delete-account/delete-account.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
@@ -31,6 +32,8 @@ import { DeleteAccountComponent } from './components/delete-account/delete-accou
     BrowserAnimationsModule,
     FontAwesomeModule,
     NgbModule,
+    FormsModule,
+        ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
