@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { DeleteAccountComponent } from './components/delete-account/delete-account.component';
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
+import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 import { GeneralsettingsComponent } from './pages/generalsettings/generalsettings.component';
 import { HomeComponent } from "./pages/home/home.component";
+import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from "./pages/signup/signup.component";
 
 const routes: Routes = [
@@ -14,9 +16,21 @@ const routes: Routes = [
     path: "",
     component: HomeComponent,
   },
+  {
+    path: "home",
+    component: HomeComponent,
+  },
 {
     path: "signup",
     component: SignupComponent,
+  },
+  {
+    path: "login",
+    component: LoginComponent,
+  },
+  {
+    path: "loginadmin",
+    component: AdminloginComponent,
   },
  //   {path:'generalsettings',
  //{path: '', redirectTo: 'generalsettings', pathMatch: 'full'},
