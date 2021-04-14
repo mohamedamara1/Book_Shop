@@ -35,6 +35,7 @@ import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
     NgbModule,
     FormsModule,
         ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

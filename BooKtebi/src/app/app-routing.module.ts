@@ -6,10 +6,15 @@ import { PaymentInfoComponent } from './components/payment-info/payment-info.com
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 import { GeneralsettingsComponent } from './pages/generalsettings/generalsettings.component';
+<<<<<<< HEAD
 import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from "./pages/signup/signup.component";
 
+=======
+import { ItemComponent } from './components/item/item.component';
+import { BasketComponent } from './components/basket/basket.component';
+>>>>>>> 32813ea129026bc90b2911b6d17e66d47efbcd4e
 const routes: Routes = [
  // {path:'', component:GeneralsettingsComponent},
 
@@ -52,6 +57,8 @@ const routes: Routes = [
         ]
 
   },
+  { path: 'item', component: ItemComponent },
+  { path: 'basket', component: BasketComponent },
 
 ];
 
