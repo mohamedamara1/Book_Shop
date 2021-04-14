@@ -7,6 +7,8 @@ import { GeneralsettingsComponent } from './pages/generalsettings/generalsetting
 
 const routes: Routes = [
  // {path:'', component:GeneralsettingsComponent},
+ //{path: '', redirectTo: 'generalsettings', pathMatch: 'full'},
+ {path: 'generalsettings', redirectTo: 'generalsettings/profile-settings', pathMatch: 'full'},
   {
     path:'generalsettings',
    component:GeneralsettingsComponent,
