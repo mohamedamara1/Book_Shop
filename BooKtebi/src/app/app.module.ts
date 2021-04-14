@@ -31,6 +31,7 @@ import { DeleteAccountComponent } from './components/delete-account/delete-accou
     BrowserAnimationsModule,
     FontAwesomeModule,
     NgbModule,
+    IonicModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
