@@ -9,7 +9,7 @@ import { SignupComponent } from "./pages/signup/signup.component";
 
 const routes: Routes = [
  // {path:'', component:GeneralsettingsComponent},
-  
+
 {
     path: "",
     component: HomeComponent,
@@ -19,6 +19,10 @@ const routes: Routes = [
     component: SignupComponent,
   },
     {path:'generalsettings',
+ //{path: '', redirectTo: 'generalsettings', pathMatch: 'full'},
+ {path: 'generalsettings', redirectTo: 'generalsettings/profile-settings', pathMatch: 'full'},
+  {
+    path:'generalsettings',
    component:GeneralsettingsComponent,
   children: [
     {path:'profile-settings', component:ProfileSettingsComponent},
