@@ -18,7 +18,7 @@ const routes: Routes = [
     path: "signup",
     component: SignupComponent,
   },
-    {path:'generalsettings',
+ //   {path:'generalsettings',
  //{path: '', redirectTo: 'generalsettings', pathMatch: 'full'},
  {path: 'generalsettings', redirectTo: 'generalsettings/profile-settings', pathMatch: 'full'},
   {
