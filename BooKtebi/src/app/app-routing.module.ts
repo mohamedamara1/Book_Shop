@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DeleteAccountComponent } from './components/delete-account/delete-account.component';
+import { NewProductsComponent } from './components/new-products/new-products.component';
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
@@ -19,7 +20,12 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
+    children :[
+      {path:'products', component:NewProductsComponent}
+    ]
   },
+
+
 {
     path: "signup",
     component: SignupComponent,
@@ -32,6 +38,7 @@ const routes: Routes = [
     path: "loginadmin",
     component: AdminloginComponent,
   },
+
  //   {path:'generalsettings',
  //{path: '', redirectTo: 'generalsettings', pathMatch: 'full'},
  {path: 'generalsettings', redirectTo: 'generalsettings/profile-settings', pathMatch: 'full'},
