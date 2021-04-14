@@ -5,6 +5,7 @@ import { PaymentInfoComponent } from './components/payment-info/payment-info.com
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { GeneralsettingsComponent } from './pages/generalsettings/generalsettings.component';
 import { HomeComponent } from "./pages/home/home.component";
+import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from "./pages/signup/signup.component";
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
 {
     path: "signup",
     component: SignupComponent,
+  },
+  {
+    path: "login",
+    component : LoginComponent,
   },
     {path:'generalsettings',
    component:GeneralsettingsComponent,
