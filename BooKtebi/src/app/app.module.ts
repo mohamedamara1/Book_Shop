@@ -29,6 +29,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ContactComponent } from './pages/contact/contact.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
@@ -43,7 +44,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     FormsModule,
         ReactiveFormsModule,
         IonicModule,
-        MDBBootstrapModule.forRoot()
+        MDBBootstrapModule.forRoot(),
+        NgxPageScrollCoreModule
 
 
   ],
