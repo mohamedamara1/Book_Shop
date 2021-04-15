@@ -3,6 +3,6 @@ nous avons travaillé sur Figma au lieu de Adobe XD à cause des problèmes tech
 
 Donc voici le lien pour consulter notre travail 
 
-https://www.figma.com/file/1jwtNHFa0iNzHdNB7K8aQB/Book-Store?node-id=0%3A1
+https://www.figma.com/file/FNvbiMMCVpGoV0QUxpPCpR/Untitled?node-id=0%3A1
 
 Vous pouvez aussi voir le prototype , j'ai attaché une capture d'écran pour vous montrer le boutton que vous devez cliquer sur.
