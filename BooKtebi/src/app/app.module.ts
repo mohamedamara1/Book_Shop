@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { IonicModule } from '@ionic/angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,10 +25,16 @@ import { DeleteAccountComponent } from './components/delete-account/delete-accou
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+import { ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ContactComponent } from './pages/contact/contact.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
     HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,
-    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent],
+    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,9 +42,14 @@ import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
     FontAwesomeModule,
     NgbModule,
     FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        IonicModule,
+        MDBBootstrapModule.forRoot(),
+        NgxPageScrollCoreModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

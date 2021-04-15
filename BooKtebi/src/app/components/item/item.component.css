@@ -1,0 +1,23 @@
+.but{
+    background-color: #E8EFFC;
+    font-style: normal;
+    font-weight: normal;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    letter-spacing: 0.05em;
+    width: 170px;
+    height: 60px;
+}
+
+
+
+.but1{
+    
+    background-color: #9E8BFF;
+    width: 240px;
+    height: 51px;
+    font-size: 22px;
+}
+.list-group{
+    overflow-y: scroll;
+    max-height: 500px;
+  }

@@ -1,0 +1,186 @@
+
+.card {
+/*  position: absolute;
+  width: 576px;
+  height: 562px;
+  left: 53px;
+  top: 328px;*/
+     margin-left:auto;
+   margin-right:auto;
+   display:block;
+
+
+}
+
+
+@media (max-width:480px)  { /* smartphones, Android phones, landscape iPhone */
+  .card{
+    border:none;
+  }
+ }
+
+input[type="email"],
+input[type="password"] {
+  display: block;
+  /*width: 500px;
+  padding: 5px;
+  margin-bottom: 5px;*/
+  font-size: 1.5em;
+  border: none;
+  border-bottom: 1px solid #88aad1;
+  left: 10%;
+
+  font-family: "Helvetica", FontAwesome, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 108.1%;
+  /* identical to box height, or 39px */
+  letter-spacing: 0.1em;
+  outline: none;
+  color: #939393;
+}
+@media (max-width:480px)  { .card{border:none;} }
+
+
+.fontAwesome {
+  font-family: "Helvetica", FontAwesome, sans-serif;
+}
+
+
+
+#remembertext {
+
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 108.1%;
+  /* identical to box height, or 26px */
+  letter-spacing: 0.1em;
+
+  color: #939393;
+}
+
+#rememberme {
+  /* connected_checkbox */
+
+ /* position: absolute;
+  left: 52.57%;
+  top: 44.48%;
+  bottom: 50%;
+*/
+  border: 3px solid #88aad1;
+  border-radius: 4px;
+}
+
+.loginbutton {
+  /*position: absolute;
+  left: 20.15%;
+  right: 8.51%;
+  top: 60.14%;
+  bottom: 25.62%;
+/* Rectangle 4 */
+
+
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+background: linear-gradient(0deg, #1BA1DA, #1BA1DA);
+  box-shadow: 0px 7px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 192px;
+}
+
+.logintext {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 108.1%;
+  /* or 52px */
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+}
+
+.forgotpassword {
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 108.1%;
+  /* identical to box height, or 22px */
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-decoration-line: underline;
+
+  color: #939393;
+}
+
+.line-3 {
+ /* position: absolute;
+
+  left: 20.02%;
+  right: 8.67%;
+  top: 91.64%;
+  bottom: 8.36%;*/
+  border: none;
+  border-bottom: 1px solid #88aad1;
+}
+
+.donthave {
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 108.1%;
+  /* or 16px */
+  letter-spacing: 0.05em;
+
+  color: #a1a4b2;
+}
+
+#fond{
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:1;
+
+}
+#man{
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:2;
+
+}
+
+@media (max-width:992px)  { /* smartphones, Android phones, landscape iPhone */
+  .card{
+    border:none;
+  }
+  #man{
+  position:initial;
+  right:initial;
+  top:initial;
+  z-index:initial;
+  }
+  .cardcol{
+    height:initial!important;
+  }
+ }
+
+ @media (min-width:992px){
+  #man{
+    height:90%;
+    width: 80%;
+    margin:auto;
+    display:block;
+  }
+  .card{
+    margin-top:23%!important;
+  }
+
+ }
