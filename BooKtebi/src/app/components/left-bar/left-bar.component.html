@@ -1,8 +1,12 @@
-<div class="container ">
-
-  <img class="profile-img row col-12 mt offset-1" src="/assets/img/twitter.png">
-  <a [routerLink]="['profile-settings']" class="general-link row mt-4 offset-2">General Settings</a>
-  <a [routerLink]="['payment-method']" class="payment-link row mt-5 offset-2">Payment Method</a>
-  <a [routerLink]="['delete-account']" class="del-acc-link row mt-5 offset-2">Delete Account</a>
-
+<div class="profil">
+  <img class="profil-img" src="/assets/img/avatar.png" />
+  <a [routerLink]="['../generalSettings']" class="profil-link mt-4"
+    >General Settings</a
+  >
+  <a [routerLink]="['payment-method']" class="profil-link mt-4"
+    >Payment Method</a
+  >
+  <a [routerLink]="['delete-account']" class="profil-link mt-4"
+    >Delete Account</a
+  >
 </div>

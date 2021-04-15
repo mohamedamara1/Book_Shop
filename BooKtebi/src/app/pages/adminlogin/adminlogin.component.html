@@ -1,9 +1,14 @@
-<div class="LoginContainer">
+<div class="adminLogin">
   <div class="row">
     <div class="col-md-6">
       <div class="login">
         <div class="container">
-          <form [formGroup]="loginForm" (ngSubmit)="login()" class="loginForm">
+          <h1>administration Login</h1>
+          <form
+            [formGroup]="adminLoginForm"
+            (ngSubmit)="adminLogin()"
+            class="adminLoginForm"
+          >
             <div class="row">
               <div class="input-wrapper col-md-12">
                 <input
@@ -45,20 +50,12 @@
               </div>
             </div>
             <button type="submit" class="login-btn">Log in</button>
-
-            <a href="#" class="forgot">Forgot Password ?</a>
-            <div class="signup-wrapper mt-5">
-              <hr />
-              <p>DON’T HAVE AN ACCOUNT? <a href="#"> SIGN UP</a></p>
-            </div>
           </form>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="hero">
-        <img src="../../../assets/img/signup-hero.png" alt="hero" />
-      </div>
+      <div class="hero"></div>
     </div>
   </div>
 </div>

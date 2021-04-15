@@ -21,11 +21,12 @@ import { ProfileSettingsComponent } from './components/profile-settings/profile-
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { DeleteAccountComponent } from './components/delete-account/delete-account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
     HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,
-    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent],
+    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

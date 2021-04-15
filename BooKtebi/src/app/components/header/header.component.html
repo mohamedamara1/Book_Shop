@@ -1,9 +1,10 @@
-<div class="header">
-  <div class="logo">
+<div class="header row">
+  <div class="logo col-2">
     <a href="#"> BookShop </a>
   </div>
-  <div class="nav">
-    <div class="nav-item">Home</div>
+
+  <div class="nav col-7">
+    <div class="nav-item"><a [routerLink]="['']">Home</a></div>
     <div class="nav-item">About</div>
 
     <div class="nav-item">Shop</div>
@@ -13,6 +14,8 @@
     <div class="nav-item"><i class="fa fa-shopping-cart"></i></div>
 
     <div class="nav-item"><i class="fa fa-search"></i></div>
-    <div class="nav-item"><i class="fa fa-user"></i></div>
+    <div class="nav-item">
+      <a [routerLink]="['generalSettings']"><i class="fa fa-user"></i></a>
+    </div>
   </div>
 </div>
