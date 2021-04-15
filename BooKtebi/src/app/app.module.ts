@@ -25,12 +25,15 @@ import { DeleteAccountComponent } from './components/delete-account/delete-accou
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 import { ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
     HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,
-    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent],
+    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,7 +42,9 @@ import { ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     NgbModule,
     FormsModule,
         ReactiveFormsModule,
-        IonicModule
+        IonicModule,
+        MDBBootstrapModule.forRoot()
+
 
   ],
   providers: [],

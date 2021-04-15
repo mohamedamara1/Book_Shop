@@ -12,6 +12,7 @@ import { SignupComponent } from "./pages/signup/signup.component";
 
 import { ItemComponent } from './components/item/item.component';
 import { BasketComponent } from './components/basket/basket.component';
+import { ContactComponent } from './pages/contact/contact.component';
 const routes: Routes = [
  // {path:'', component:GeneralsettingsComponent},
 
@@ -41,6 +42,10 @@ const routes: Routes = [
     component: AdminloginComponent,
   },
 
+  {
+    path: "contact",
+    component: ContactComponent,
+  },
  //   {path:'generalsettings',
  //{path: '', redirectTo: 'generalsettings', pathMatch: 'full'},
  {path: 'generalsettings', redirectTo: 'generalsettings/profile-settings', pathMatch: 'full'},
