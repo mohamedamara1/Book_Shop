@@ -6,39 +6,32 @@ import { PaymentInfoComponent } from './components/payment-info/payment-info.com
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 import { GeneralsettingsComponent } from './pages/generalsettings/generalsettings.component';
-import { HomeComponent } from "./pages/home/home.component";
+import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from "./pages/signup/signup.component";
+import { SignupComponent } from './pages/signup/signup.component';
 
 import { ItemComponent } from './components/item/item.component';
 import { BasketComponent } from './components/basket/basket.component';
 import { ContactComponent } from './pages/contact/contact.component';
 const routes: Routes = [
- // {path:'', component:GeneralsettingsComponent},
-
-{
-    path: "",
-    component: HomeComponent,
-  },
   {
-    path: "home",
+    path: '',
     component: HomeComponent,
     children :[
       {path:'products', component:NewProductsComponent}
     ]
   },
 
-
-{
-    path: "signup",
+  {
+    path: 'signUp',
     component: SignupComponent,
   },
   {
-    path: "login",
+    path: 'login',
     component: LoginComponent,
   },
   {
-    path: "loginadmin",
+    path: 'loginAdmin',
     component: AdminloginComponent,
   },
 
@@ -61,8 +54,8 @@ const routes: Routes = [
     {path:'payment-method', component:PaymentInfoComponent},
     {path:'delete-account', component:DeleteAccountComponent}
         ]
+      },
 
-  },
   { path: 'item', component: ItemComponent },
   { path: 'basket', component: BasketComponent },
 

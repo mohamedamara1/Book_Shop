@@ -1,30 +1,3 @@
-.sky_bg {
- /* position: absolute;
-  right: 0px;
-  height: 100%;*/
-}
-
-/* tyVector 1 */
-.suitman {
-  /*position: absolute;
-  width: 864px;
-  height: 916px;
-  right: 0%;
-  top: 56px;*/
-}
-/*
-#wrapper {
-  position: relative;
-}
-
-#fond, #man {
-  opacity: 1;
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform:translateY(-30%) translateX(-50%);
-}
-*/
 
 .card {
 /*  position: absolute;
@@ -69,27 +42,15 @@ input[type="password"] {
 }
 @media (max-width:480px)  { .card{border:none;} }
 
-.emailfield {
-  /*position: absolute;
-  top: 1.96%;
-  bottom: 91.1%;*/
-}
 
 .fontAwesome {
   font-family: "Helvetica", FontAwesome, sans-serif;
 }
 
-.passwordfield {
-  /*position: absolute;
-  top: 29%;
-  bottom: 64.06%;*/
-}
+
 
 #remembertext {
-  /*position: absolute;
-  left: 13%;
-  top: 44.48%;
-  bottom: 50.89%;*/
+
 
   font-family: Roboto;
   font-style: normal;
@@ -143,11 +104,7 @@ background: linear-gradient(0deg, #1BA1DA, #1BA1DA);
 }
 
 .forgotpassword {
- /* position: absolute;
-  left: 42.24%;
-  top: 76.69%;
-  bottom: 19.4%;
-*/
+
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -173,12 +130,7 @@ background: linear-gradient(0deg, #1BA1DA, #1BA1DA);
 }
 
 .donthave {
-  /*position: absolute;
-  left: 31.43%;
-  right: 8.51%;
-  top: 94.13%;
-  bottom: 0%;
-*/
+
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -189,11 +141,7 @@ background: linear-gradient(0deg, #1BA1DA, #1BA1DA);
 
   color: #a1a4b2;
 }
-/*
-.wrapper{
-  position: relative;
-  z-index:0;
-}*/
+
 #fond{
   position:absolute;
   right:0;
