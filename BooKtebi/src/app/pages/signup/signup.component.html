@@ -1,7 +1,8 @@
 <div class="signup">
-  <div class="row">
-    <div class="col-md-6">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6 ">
       <div class="container">
+
         <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="signupForm">
           <div class="row">
             <div class="input-wrapper col-md-6">
@@ -73,7 +74,8 @@
           <button type="submit" class="signup-btn">Sign Up</button>
           <div class="signin-wrapper mt-5">
             <hr />
-            <p>ALREADY HAVE AN ACCOUNT ? <a href=""> SIGN IN</a></p>
+            <p>ALREADY HAVE AN ACCOUNT ? <a routerLink="/login" > SIGN IN</a></p>
+
           </div>
         </form>
       </div>
