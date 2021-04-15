@@ -37,15 +37,19 @@
       i {
         font-size: 20px;
       }
-    }
-    a {
-
+      a {
       color: #413f3f;
+    }
+    a:hover {
+        color: #7a5cffb3;
+}
+  .active{
+   color: #007bff!important;
+  }
 
     }
-  }
-}
 
-.active{
-  color: #ff6eb7;
+  }
+
+
 }
