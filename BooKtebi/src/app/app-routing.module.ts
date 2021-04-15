@@ -46,6 +46,10 @@ const routes: Routes = [
     path: "contact",
     component: ContactComponent,
   },
+  {
+    path: "item",
+    component: ItemComponent,
+  },
  //   {path:'generalsettings',
  //{path: '', redirectTo: 'generalsettings', pathMatch: 'full'},
  {path: 'generalsettings', redirectTo: 'generalsettings/profile-settings', pathMatch: 'full'},
