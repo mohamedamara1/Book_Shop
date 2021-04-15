@@ -25,6 +25,8 @@ import { DeleteAccountComponent } from './components/delete-account/delete-accou
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 import { ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
@@ -39,7 +41,9 @@ import { ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     NgbModule,
     FormsModule,
         ReactiveFormsModule,
-        IonicModule
+        IonicModule,
+        MDBBootstrapModule.forRoot()
+
 
   ],
   providers: [],
