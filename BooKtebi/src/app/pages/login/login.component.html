@@ -1,67 +1,64 @@
-<router-outlet></router-outlet>
-<div class="loginpage">
-
-  <div class="header">
-    <app-header></app-header>
-  </div>
-
-  <div class="container-fluid h-100 mt-1">
-    <div class="row  h-100 d-flex justify-content-center ">
-
-
-      <div class="cardcol col-12 col-lg-6 order-lg-1 order-2 h-100">
-        <div class="card col-md-12 mt-lg-5">
-          <div class="card-body container ">
-            <form>
-              <div class="form group row col-12 ">
+<div class="LoginContainer">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="login">
+        <div class="container">
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="loginForm">
+            <div class="row">
+              <div class="input-wrapper col-md-12">
                 <input
                   type="email"
-                  formCOntrolName="email"
-                  class="form-control inputchange emailfield fontAwesome"
-                  placeholder="&#xF002; E-mail address"
+                  name="email"
+                  class="form-control"
+                  placeholder="E-mail Adress"
+                  formControlName="email"
                 />
               </div>
-              <div class="form-group  row col-12 mt-lg-5">
+              <div class="input-wrapper col-md-12">
                 <input
                   type="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Password"
                   formControlName="password"
-                  class="form-control inputchange passwordfield fontAwesome"
-                  placeholder="&#xF023; Password"
                 />
               </div>
-
-              <div class="form-group row col-12 mt-lg-5">
-                <label for="rememberme" id="remembertext">Stay connected?</label>
-                <input type="checkbox" id="rememberme" />
+              <div class="input-wrapper radio-wrapper col-md-12">
+                <label class="container">
+                  <span
+                    class="label-text"
+                    style="font-size: 14px; color: #939393"
+                  >
+                    Stay connected ?
+                  </span>
+                  <input
+                    type="checkbox"
+                    id="stayConnected"
+                    name="stayConnected"
+                    value="true"
+                    class="stayConnected-input"
+                    style="margin-left: 40px"
+                    formControlName="stayConnected"
+                  />
+                  <span class="checkmark"></span>
+                </label>
               </div>
+            </div>
+            <button type="submit" class="login-btn">Log in</button>
 
-              <div class="form-group row col-12 mt-lg-5">
-                <button class="btn btn-primary loginbutton offset-3 col-6">
-                  <div class="logintext">Login</div>
-                </button>
-                <a routerLink="../forgotpassword" class="btn btn-link forgotpassword row col-12 mt-lg-2 d-flex justify-content-center"
-                  >Forgot password!</a
-                >
-              </div>
-
-              <hr class="line-3 row col-12 mt-lg-5" />
-
-              <p class="donthave row col-12 d-flex justify-content-center">
-                DON'T HAVE A ACCOUNT?
-                <a routerLink="../signup" class="signuplink"> SIGN UP </a>
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class=" col-lg-6 col-12 order-lg-2 order-1  ">
-        <div class="wrapper">
-          <img class="img-fluid " id="man" src="./assets/img/signup-hero.png" alt="man" />
-          <img class=" h-100 w-100 d-none d-lg-block " id="fond" src="./assets/img/fond_right.svg" alt="fond" />
+            <a href="#" class="forgot">Forgot Password ?</a>
+            <div class="signup-wrapper mt-5">
+              <hr />
+              <p>DON’T HAVE AN ACCOUNT? <a href="signup"> SIGN UP</a></p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+    <div class="col-md-6">
+      <div class="hero">
+        <img src="../../../assets/img/signup-hero.png" alt="hero" />
+      </div>
+    </div>
   </div>
-
-
 </div>
