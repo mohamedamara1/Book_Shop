@@ -1,4 +1,96 @@
 
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+.firstbox {
+    position: relative;
+    top: 0;
+    left: 70px;
+    border: 3px solid black;
+    width: 90%;
+    height:420px;
+
+}
+
+.all {
+  position: relative;
+  top: -250px;
+  left: 250px;
+}
+.detail {
+    position: relative;
+    top: 20px;
+    left: 20px;
+  }
+.bookcover {
+    position: relative;
+    top: 310px;
+    left: -200px;
+  }
+.price {
+    position: relative;
+    top: -400px;
+    left: 500px;
+  }
+
+  .ups {
+    position: relative;
+    top: -50px;
+    left: 100px;
+  }
+  .up {
+    position: relative;
+    top: -40px;
+    left: 18px;
+  }
+  .down {
+    position: relative;
+    top: 35px;
+    left: -55px;
+  }
+
+  .k{
+      font-size: 35px;
+      position: relative;
+      top:  0px;
+      left: -20px;
+  }
+
+  .pr{
+    font-size: 40px;
+    position: relative;
+    top:  20px;
+    left: -35px;
+  }
+
+
+  .secondbox {
+    position: relative;
+    top: 50px;
+    left: 70px;
+    border: 3px solid black;
+    width: 90%;
+    height: 390px;
+
+}
+
+.paym{
+    position: relative;
+    top:  10px;
+    left: 900px;
+  }
+  .one {
+    position: relative;
+    top:  -45px;
+    left: 300px;
+  }
+  
 .but{
     background-color: #A58FFF;
     width: 110px;
@@ -21,6 +113,9 @@
     line-height: 28px;
     text-align: center;
     letter-spacing: 0.05em;
+    position: relative;
+    top:  50px;
+    left: 100px;
 
 }
 
@@ -46,10 +141,27 @@ letter-spacing: 0.10em;
     font-size: 25px;
 }
 
-.detail{
-font-size: 25px;
-font-style: normal;
-font-weight: normal;
-line-height: 28px;
-letter-spacing: 0.05em;
-}
+.master{
+    position: relative;
+    top:  -0px;
+    left: 50px;
+  }
+
+.visa {
+    position: relative;
+    top:  -0px;
+    left: 100px;
+  }
+  
+ .shop {
+    position: relative;
+    top:  -0px;
+    left: 100px;
+  }
+
+  hr {
+    position: relative;
+    top:  -10px;
+    left: 0px;
+  }
+  
