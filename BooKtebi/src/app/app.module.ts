@@ -49,7 +49,6 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
         MDBBootstrapModule.forRoot(),
         NgxPageScrollCoreModule
 
-
   ],
   providers: [],
   bootstrap: [AppComponent],
