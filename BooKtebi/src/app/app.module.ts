@@ -33,6 +33,10 @@ import { ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
     HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,ItemComponent,BasketComponent,
@@ -47,7 +51,8 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
         ReactiveFormsModule,
         IonicModule,
         MDBBootstrapModule.forRoot(),
-        NgxPageScrollCoreModule
+        NgxPageScrollCoreModule,
+        HttpClientModule
 
   ],
   providers: [],
