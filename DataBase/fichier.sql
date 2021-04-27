@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema bookshop
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema bookshop
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `bookshop` DEFAULT CHARACTER SET utf8 ;
+USE `bookshop` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Client`
+-- Table `bookshop`.`Client`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Client` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`Client` (
   `id_client` INT NOT NULL,
   `prenom_client` VARCHAR(45) NULL,
   `nom_client` VARCHAR(45) NULL,
@@ -29,15 +29,14 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Client` (
   `age` INT NULL,
   `date_naissance` DATE NULL,
   `code_postal` VARCHAR(45) NULL,
-  `email` VARCHAR(45) NULL,
   PRIMARY KEY (`id_client`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`admin`
+-- Table `bookshop`.`admin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`admin` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`admin` (
   `id_admin` INT NOT NULL,
   `nom_admin` VARCHAR(45) NULL,
   `prenom_admin` VARCHAR(45) NULL,
@@ -47,31 +46,30 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`compte`
+-- Table `bookshop`.`compte`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`compte` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`compte` (
   `login_id` VARCHAR(255) NOT NULL,
   `client_id` INT NOT NULL,
-  `admin_id` INT NULL,
+  `id_admin` INT NULL,
   `password` VARCHAR(32) NOT NULL,
   PRIMARY KEY (`login_id`),
-  INDEX `fk_compte_1_idx` (`client_id` ASC, `admin_id` ASC) VISIBLE,
   CONSTRAINT `fk_compte_1`
-    FOREIGN KEY (`client_id` , `admin_id`)
-    REFERENCES `mydb`.`Client` (`id_client` , `id_client`)
+    FOREIGN KEY (`client_id` , `id_admin`)
+    REFERENCES `bookshop`.`Client` (`id_client` , `id_client`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_compte_2`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`admin` ()
+    REFERENCES `bookshop`.`admin` (`id_admin`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Category`
+-- Table `bookshop`.`Category`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Category` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`Category` (
   `idCategory` INT NOT NULL,
   `category_name` VARCHAR(45) NULL,
   PRIMARY KEY (`idCategory`))
@@ -79,9 +77,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`book`
+-- Table `bookshop`.`book`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`book` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`book` (
   `book_id` INT NOT NULL,
   `book_title` VARCHAR(45) NULL,
   `price` VARCHAR(45) NULL,
@@ -94,33 +92,32 @@ CREATE TABLE IF NOT EXISTS `mydb`.`book` (
   INDEX `fk_book_1_idx` (`category_id` ASC) VISIBLE,
   CONSTRAINT `fk_book_1`
     FOREIGN KEY (`category_id`)
-    REFERENCES `mydb`.`Category` (`idCategory`)
+    REFERENCES `bookshop`.`Category` (`idCategory`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Element_Panier`
+-- Table `bookshop`.`Element_Panier`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Element_Panier` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`Element_Panier` (
   `idElement_Panier` INT NOT NULL,
   `book_id` INT NULL,
   `quantity` INT NULL,
   PRIMARY KEY (`idElement_Panier`),
-  INDEX `fk_Element_Panier_1_idx` (`book_id` ASC) VISIBLE,
   CONSTRAINT `fk_Element_Panier_1`
     FOREIGN KEY (`book_id`)
-    REFERENCES `mydb`.`book` (`book_id`)
+    REFERENCES `bookshop`.`book` (`book_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Panier`
+-- Table `bookshop`.`Panier`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Panier` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`Panier` (
   `id_panier` INT NOT NULL,
   `client_id` INT NULL,
   `element_panier` INT NULL,
@@ -129,66 +126,63 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Panier` (
   INDEX `fk_Panier_2_idx` (`element_panier` ASC) VISIBLE,
   CONSTRAINT `fk_Panier_1`
     FOREIGN KEY (`client_id`)
-    REFERENCES `mydb`.`Client` (`id_client`)
+    REFERENCES `bookshop`.`Client` (`id_client`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Panier_2`
     FOREIGN KEY (`element_panier`)
-    REFERENCES `mydb`.`Element_Panier` (`idElement_Panier`)
+    REFERENCES `bookshop`.`Element_Panier` (`idElement_Panier`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`commande`
+-- Table `bookshop`.`commande`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`commande` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`commande` (
   `id_comnd` INT NOT NULL,
   `date_com` VARCHAR(45) NULL,
   `est_delivrée` INT NULL,
   `panier` INT NULL,
   PRIMARY KEY (`id_comnd`),
-  INDEX `fk_commande_1_idx` (`panier` ASC) VISIBLE,
   CONSTRAINT `fk_commande_1`
     FOREIGN KEY (`panier`)
-    REFERENCES `mydb`.`Panier` (`id_panier`)
+    REFERENCES `bookshop`.`Panier` (`id_panier`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Stock`
+-- Table `bookshop`.`Stock`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Stock` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`Stock` (
   `stock_id` INT NOT NULL,
   `book_id` INT NULL,
   `quantity` VARCHAR(45) NULL,
   PRIMARY KEY (`stock_id`),
-  INDEX `fk_Stock_1_idx` (`book_id` ASC) VISIBLE,
   CONSTRAINT `fk_Stock_1`
     FOREIGN KEY (`book_id`)
-    REFERENCES `mydb`.`book` (`book_id`)
+    REFERENCES `bookshop`.`book` (`book_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Paeiment`
+-- Table `bookshop`.`Paeiment`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Paeiment` (
+CREATE TABLE IF NOT EXISTS `bookshop`.`Paeiment` (
   `idPaeiment` INT NOT NULL,
   `id_comnd` INT NULL,
   `type_paeiment` VARCHAR(45) NULL,
   `date_paiement` VARCHAR(45) NULL,
   `montant` VARCHAR(45) NULL,
   PRIMARY KEY (`idPaeiment`),
-  INDEX `fk_Paeiment_1_idx` (`id_comnd` ASC) VISIBLE,
   CONSTRAINT `fk_Paeiment_1`
     FOREIGN KEY (`id_comnd`)
-    REFERENCES `mydb`.`commande` (`id_comnd`)
+    REFERENCES `bookshop`.`commande` (`id_comnd`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
