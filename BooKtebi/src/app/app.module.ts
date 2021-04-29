@@ -34,6 +34,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 import { HttpClientModule } from '@angular/common/http';
+import { BookService } from './services/book.service';
 
 
 
@@ -55,7 +56,7 @@ import { HttpClientModule } from '@angular/common/http';
         HttpClientModule
 
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
