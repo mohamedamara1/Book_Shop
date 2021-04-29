@@ -6,5 +6,6 @@ export interface IBook{
      stars : number,
      description : string,
      product_details : string,
+     author_name : string
 
 }

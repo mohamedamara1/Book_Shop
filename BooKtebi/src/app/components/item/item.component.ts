@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from 'app/services/book.service';
 import { IBook } from 'app/interfaces/IBook';
-
+import { map } from 'rxjs/operators'
 
 
 @Component({
@@ -32,7 +32,7 @@ export class ItemComponent implements OnInit {
     this._bookservice.getBookById(bookIdFromRoute)
         .subscribe( response =>{
         console.log( response);
-        this.book = response[1];
+        this.book = response;
     });
   }
 

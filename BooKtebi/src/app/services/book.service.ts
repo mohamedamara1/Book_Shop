@@ -12,6 +12,8 @@ export class BookService {
   private _newprods_url : string = 'http://localhost:8000/newprods';
   private _bestselling : string = 'http://localhost:8000/bestselling';
   private _getbookbyid: string = 'htt://localhost:8000/bookid'
+  private SERVER_URL = 'http://localhost:8000/';
+
 
  // private _testurl : string = "../../assets/fakeapidata/newprods.json"
   constructor(private http: HttpClient) { }
@@ -29,8 +31,8 @@ export class BookService {
     return this.http.get<IProd[]>(this._bestselling);
   }
 
-  getBookById(id : number){
-    return this.http.get<IBook>(this._testurl);
+  getBookById(id : number): Observable<IBook>{
+    return this.http.get<IBook>(this.SERVER_URL+ 'book?bookid=' + id);
   }
 
 }

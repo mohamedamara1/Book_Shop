@@ -35,6 +35,7 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './services/book.service';
+import { SearchModule } from './components/search/search.module';
 
 
 
@@ -53,7 +54,8 @@ import { BookService } from './services/book.service';
         IonicModule,
         MDBBootstrapModule.forRoot(),
         NgxPageScrollCoreModule,
-        HttpClientModule
+        HttpClientModule,
+        SearchModule
 
   ],
   providers: [BookService],
