@@ -28,7 +28,6 @@ def get_prods():
   mycursor = mydb.cursor()
   mycursor.execute(
         f"SELECT book_id, book_title,price, date_ajout,rating FROM book where new = 1;" )
-  print(mycursor.description)
   #row_headers=[x[0]for x in mycursor.description]
   row_headers = ['id', 'name', 'price', 'date', 'stars']
   result = mycursor.fetchall()
@@ -49,9 +48,46 @@ def get_best():
   mycursor = mydb.cursor()
   mycursor.execute(
         f"SELECT book_id, book_title,price, date_ajout,rating FROM book where bestselling = 1;" )
-  print(mycursor.description)
   #row_headers=[x[0]for x in mycursor.description]
-  row_headers = ['id', 'name', 'price', 'date', 'rating']
+  row_headers = ['id', 'name', 'price', 'date', 'stars']
+
+  result = mycursor.fetchall()
+  json_data=[]
+
+  for res in result:
+    json_data.append(dict(zip(row_headers,res)))
+
+  y=json_data
+  return y
+
+@app.get("/book")
+def get_best(bookid : str):
+
+  mydb = mysql.connector.connect(host="localhost",user="root",password="",database="bookshop")
+  mycursor = mydb.cursor()
+  mycursor.execute(
+        f"SELECT book_id, book_title,price, date_ajout,rating, book_description, book_writer FROM book where book_id = '{bookid}';" )
+  #row_headers=[x[0]for x in mycursor.description]
+  row_headers = ['id', 'title', 'price', 'date_ajout', 'stars', 'description','products_details','author_name' ]
+
+  result = mycursor.fetchall()
+  json_data=[]
+
+  for res in result:
+    json_data.append(dict(zip(row_headers,res)))
+
+  y=json_data[0]
+  return y
+
+@app.get("/products")
+def get_like(name_like : str):
+
+  mydb = mysql.connector.connect(host="localhost",user="root",password="",database="bookshop")
+  mycursor = mydb.cursor()
+  mycursor.execute(
+        f"SELECT book_id, book_title,price, date_ajout,rating FROM book where book_title like '{name_like}%' ;" )
+  #row_headers=[x[0]for x in mycursor.description]
+  row_headers = ['id', 'name', 'price', 'date', 'stars']
 
   result = mycursor.fetchall()
   json_data=[]
