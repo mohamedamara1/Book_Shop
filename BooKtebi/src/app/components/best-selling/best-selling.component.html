@@ -1,11 +1,10 @@
 <div class="bestSelling">
   <h1>Best Selling</h1>
   <div class="sellings">
-    <div class="row">
-      <div class="col-md-3"><app-product></app-product></div>
-      <div class="col-md-3"><app-product></app-product></div>
-      <div class="col-md-3"><app-product></app-product></div>
-      <div class="col-md-3"><app-product></app-product></div>
+  <div class="row">
+    <div *ngFor = "let prod of bestselling" class ="col-3" >
+        <app-product [book] = "prod"></app-product>
     </div>
+  </div>
   </div>
 </div>

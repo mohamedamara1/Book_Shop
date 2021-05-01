@@ -43,6 +43,8 @@ const routes: Routes = [
     path: "item",
     component: ItemComponent,
   },
+  { path: 'item/:bookId',
+   component: ItemComponent },
  //   {path:'generalsettings',
  //{path: '', redirectTo: 'generalsettings', pathMatch: 'full'},
  {path: 'generalsettings', redirectTo: 'generalsettings/profile-settings', pathMatch: 'full'},

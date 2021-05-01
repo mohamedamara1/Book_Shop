@@ -34,6 +34,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 import { HttpClientModule } from '@angular/common/http';
+import { BookService } from './services/book.service';
+import { SearchModule } from './components/search/search.module';
 
 
 
@@ -52,10 +54,11 @@ import { HttpClientModule } from '@angular/common/http';
         IonicModule,
         MDBBootstrapModule.forRoot(),
         NgxPageScrollCoreModule,
-        HttpClientModule
+        HttpClientModule,
+        SearchModule
 
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

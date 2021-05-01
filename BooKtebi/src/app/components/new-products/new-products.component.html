@@ -1,13 +1,9 @@
 <div class="newProducts">
   <h1>New Products</h1>
   <div class="row">
-    <div class="col-md-3">
-      <app-product></app-product>
+    <div *ngFor = "let prod of newprods" class ="col-3" >
+        <app-product [book] = "prod"></app-product>
     </div>
-
-    <div class="col-md-3"><app-product></app-product></div>
-
-    <div class="col-md-3"><app-product></app-product></div>
-    <div class="col-md-3"><app-product></app-product></div>
   </div>
+
 </div>
