@@ -36,13 +36,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './services/book.service';
 import { SearchModule } from './components/search/search.module';
 import { CartComponent } from './pages/cart/cart.component';
+import { CartElementComponent } from './components/cart-element/cart-element.component';
 
 
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
     HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,ItemComponent,
-    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent, CartComponent],
+    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent, CartComponent, CartElementComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
