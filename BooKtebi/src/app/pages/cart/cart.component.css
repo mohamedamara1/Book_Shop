@@ -1,0 +1,18 @@
+.firstbox{
+    border-style: inset;
+    border-width: 0.1cm;
+}
+
+.secondbox{
+    margin-top: 3%;
+    border-style: inset;
+    border-width: 0.1cm;
+}
+
+.price{
+    margin-top: 37%;
+}
+
+.k{
+    margin-left: 3%;
+}
