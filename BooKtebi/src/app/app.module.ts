@@ -25,7 +25,6 @@ import { DeleteAccountComponent } from './components/delete-account/delete-accou
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 import { ItemComponent } from './components/item/item.component';
-import { BasketComponent } from './components/basket/basket.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -36,13 +35,14 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './services/book.service';
 import { SearchModule } from './components/search/search.module';
+import { CartComponent } from './pages/cart/cart.component';
 
 
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
     HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,ItemComponent,BasketComponent,
-    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent],
+    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent, CartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
