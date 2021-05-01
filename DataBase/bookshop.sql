@@ -2,10 +2,10 @@
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : sam. 01 mai 2021 à 19:30
--- Version du serveur :  10.4.18-MariaDB
--- Version de PHP : 8.0.3
+-- Host: 127.0.0.1
+-- Generation Time: Apr 29, 2021 at 03:28 AM
+-- Server version: 8.0.23-0ubuntu0.20.04.1
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,52 +18,45 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `bookshop`
+-- Database: `bookshop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
-  `id_admin` int(11) NOT NULL,
+  `id_admin` int NOT NULL,
   `nom_admin` varchar(45) DEFAULT NULL,
   `prenom_admin` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Déchargement des données de la table `admin`
---
-
-INSERT INTO `admin` (`id_admin`, `nom_admin`, `prenom_admin`, `email`) VALUES
-(22, 'hemsworth', 'chris', 'chaima@hotmail.com');
-
 -- --------------------------------------------------------
 
 --
--- Structure de la table `book`
+-- Table structure for table `book`
 --
 
 CREATE TABLE `book` (
-  `book_id` int(11) NOT NULL,
+  `book_id` int NOT NULL,
   `book_title` varchar(45) DEFAULT NULL,
   `price` varchar(45) DEFAULT NULL,
   `book_description` varchar(45) DEFAULT NULL,
   `book_image` varchar(45) DEFAULT NULL,
   `date_ajout` varchar(45) DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
+  `category_id` int DEFAULT NULL,
   `book_writer` varchar(45) DEFAULT NULL,
-  `rating` int(11) NOT NULL,
-  `new` int(11) NOT NULL,
-  `bestselling` int(11) NOT NULL,
+  `rating` int NOT NULL,
+  `new` int NOT NULL,
+  `bestselling` int NOT NULL,
   `imageurl` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `book`
+-- Dumping data for table `book`
 --
 
 INSERT INTO `book` (`book_id`, `book_title`, `price`, `book_description`, `book_image`, `date_ajout`, `category_id`, `book_writer`, `rating`, `new`, `bestselling`, `imageurl`) VALUES
@@ -85,87 +78,65 @@ INSERT INTO `book` (`book_id`, `book_title`, `price`, `book_description`, `book_
 -- --------------------------------------------------------
 
 --
--- Structure de la table `category`
+-- Table structure for table `Category`
 --
 
-CREATE TABLE `category` (
-  `idCategory` int(11) NOT NULL,
+CREATE TABLE `Category` (
+  `idCategory` int NOT NULL,
   `category_name` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `client`
+-- Table structure for table `Client`
 --
 
-CREATE TABLE `client` (
-  `id_client` int(11) NOT NULL,
+CREATE TABLE `Client` (
+  `id_client` int NOT NULL,
   `prenom_client` varchar(45) DEFAULT NULL,
   `nom_client` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `ville` varchar(45) DEFAULT NULL,
-  `age` int(11) DEFAULT NULL,
+  `age` int DEFAULT NULL,
   `date_naissance` date DEFAULT NULL,
-  `code_postal` varchar(45) DEFAULT NULL,
-  `phone` varchar(8) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `code_postal` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `client`
---
-
-INSERT INTO `client` (`id_client`, `prenom_client`, `nom_client`, `email`, `ville`, `age`, `date_naissance`, `code_postal`, `phone`, `password`) VALUES
-(1, 'bf', 'chaima', 'chaimabf21@hotmail.com', 'paris', 35, '2021-04-12', '2034', '', ''),
-(2, 'test', 'test', 'chaimab1@hotmail.com', '', 0, '0000-00-00', '', '1234567', ''),
-(3, 'test', 'test', 'chaimabf@hotmail.com', '', 0, '0000-00-00', '', '1245777', ''),
-(4, 'test', 'test', 'ch@hotmail.com', '', 0, '0000-00-00', '', '123456', ''),
-(5, 'te', 'te', 'ch1@hotmail.com', '', 0, '0000-00-00', '', '1425', ''),
-(6, 't', 't', 'bf21@hotmail.com', '', 0, '0000-00-00', '', '245869', '123'),
-(7, 'hama', 'amara', 'amara@gmail.com', '', 0, '0000-00-00', '', '1237895', '147258');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commande`
+-- Table structure for table `commande`
 --
 
 CREATE TABLE `commande` (
-  `id_comnd` int(11) NOT NULL,
+  `id_comnd` int NOT NULL,
   `date_com` varchar(45) DEFAULT NULL,
-  `est_delivrée` int(11) DEFAULT NULL,
-  `panier` int(11) DEFAULT NULL
+  `est_delivrée` int DEFAULT NULL,
+  `panier` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `compte`
+-- Table structure for table `compte`
 --
 
 CREATE TABLE `compte` (
   `login_id` varchar(255) NOT NULL,
-  `client_id` int(11) NOT NULL,
-  `admin_id` int(11) DEFAULT NULL,
+  `client_id` int NOT NULL,
+  `admin_id` int DEFAULT NULL,
   `password` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `compte`
---
-
-INSERT INTO `compte` (`login_id`, `client_id`, `admin_id`, `password`) VALUES
-('test', 1, 22, '123456');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contact`
+-- Table structure for table `contact`
 --
 
 CREATE TABLE `contact` (
-  `id_contact` int(11) NOT NULL,
+  `id_contact` int NOT NULL,
   `name` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `subject` varchar(40) NOT NULL,
@@ -173,7 +144,7 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `contact`
+-- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`id_contact`, `name`, `email`, `subject`, `message`) VALUES
@@ -197,24 +168,24 @@ INSERT INTO `contact` (`id_contact`, `name`, `email`, `subject`, `message`) VALU
 -- --------------------------------------------------------
 
 --
--- Structure de la table `element_panier`
+-- Table structure for table `Element_Panier`
 --
 
-CREATE TABLE `element_panier` (
-  `idElement_Panier` int(11) NOT NULL,
-  `book_id` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL
+CREATE TABLE `Element_Panier` (
+  `idElement_Panier` int NOT NULL,
+  `book_id` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `paeiment`
+-- Table structure for table `Paeiment`
 --
 
-CREATE TABLE `paeiment` (
-  `idPaeiment` int(11) NOT NULL,
-  `id_comnd` int(11) DEFAULT NULL,
+CREATE TABLE `Paeiment` (
+  `idPaeiment` int NOT NULL,
+  `id_comnd` int DEFAULT NULL,
   `type_paeiment` varchar(45) DEFAULT NULL,
   `date_paiement` varchar(45) DEFAULT NULL,
   `montant` varchar(45) DEFAULT NULL
@@ -223,65 +194,65 @@ CREATE TABLE `paeiment` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `panier`
+-- Table structure for table `Panier`
 --
 
-CREATE TABLE `panier` (
-  `id_panier` int(11) NOT NULL,
-  `client_id` int(11) DEFAULT NULL,
-  `element_panier` int(11) DEFAULT NULL
+CREATE TABLE `Panier` (
+  `id_panier` int NOT NULL,
+  `client_id` int DEFAULT NULL,
+  `element_panier` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `stock`
+-- Table structure for table `Stock`
 --
 
-CREATE TABLE `stock` (
-  `stock_id` int(11) NOT NULL,
-  `book_id` int(11) DEFAULT NULL,
+CREATE TABLE `Stock` (
+  `stock_id` int NOT NULL,
+  `book_id` int DEFAULT NULL,
   `quantity` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Index pour la table `book`
+-- Indexes for table `book`
 --
 ALTER TABLE `book`
   ADD PRIMARY KEY (`book_id`),
   ADD KEY `fk_book_1_idx` (`category_id`);
 
 --
--- Index pour la table `category`
+-- Indexes for table `Category`
 --
-ALTER TABLE `category`
+ALTER TABLE `Category`
   ADD PRIMARY KEY (`idCategory`);
 
 --
--- Index pour la table `client`
+-- Indexes for table `Client`
 --
-ALTER TABLE `client`
+ALTER TABLE `Client`
   ADD PRIMARY KEY (`id_client`);
 
 --
--- Index pour la table `commande`
+-- Indexes for table `commande`
 --
 ALTER TABLE `commande`
   ADD PRIMARY KEY (`id_comnd`),
   ADD KEY `fk_commande_1_idx` (`panier`);
 
 --
--- Index pour la table `compte`
+-- Indexes for table `compte`
 --
 ALTER TABLE `compte`
   ADD PRIMARY KEY (`login_id`),
@@ -289,96 +260,96 @@ ALTER TABLE `compte`
   ADD KEY `fk_compte_2_idx` (`admin_id`);
 
 --
--- Index pour la table `contact`
+-- Indexes for table `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id_contact`);
 
 --
--- Index pour la table `element_panier`
+-- Indexes for table `Element_Panier`
 --
-ALTER TABLE `element_panier`
+ALTER TABLE `Element_Panier`
   ADD PRIMARY KEY (`idElement_Panier`),
   ADD KEY `fk_Element_Panier_1_idx` (`book_id`);
 
 --
--- Index pour la table `paeiment`
+-- Indexes for table `Paeiment`
 --
-ALTER TABLE `paeiment`
+ALTER TABLE `Paeiment`
   ADD PRIMARY KEY (`idPaeiment`),
   ADD KEY `fk_Paeiment_1_idx` (`id_comnd`);
 
 --
--- Index pour la table `panier`
+-- Indexes for table `Panier`
 --
-ALTER TABLE `panier`
+ALTER TABLE `Panier`
   ADD PRIMARY KEY (`id_panier`),
   ADD KEY `fk_Panier_1_idx` (`client_id`),
   ADD KEY `fk_Panier_2_idx` (`element_panier`);
 
 --
--- Index pour la table `stock`
+-- Indexes for table `Stock`
 --
-ALTER TABLE `stock`
+ALTER TABLE `Stock`
   ADD PRIMARY KEY (`stock_id`),
   ADD KEY `fk_Stock_1_idx` (`book_id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `contact`
+-- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_contact` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `book`
+-- Constraints for table `book`
 --
 ALTER TABLE `book`
-  ADD CONSTRAINT `fk_book_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`idCategory`);
+  ADD CONSTRAINT `fk_book_1` FOREIGN KEY (`category_id`) REFERENCES `Category` (`idCategory`);
 
 --
--- Contraintes pour la table `commande`
+-- Constraints for table `commande`
 --
 ALTER TABLE `commande`
-  ADD CONSTRAINT `fk_commande_1` FOREIGN KEY (`panier`) REFERENCES `panier` (`id_panier`);
+  ADD CONSTRAINT `fk_commande_1` FOREIGN KEY (`panier`) REFERENCES `Panier` (`id_panier`);
 
 --
--- Contraintes pour la table `compte`
+-- Constraints for table `compte`
 --
 ALTER TABLE `compte`
-  ADD CONSTRAINT `fk_compte_1` FOREIGN KEY (`client_id`) REFERENCES `client` (`id_client`),
+  ADD CONSTRAINT `fk_compte_1` FOREIGN KEY (`client_id`) REFERENCES `Client` (`id_client`),
   ADD CONSTRAINT `fk_compte_2` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id_admin`);
 
 --
--- Contraintes pour la table `element_panier`
+-- Constraints for table `Element_Panier`
 --
-ALTER TABLE `element_panier`
+ALTER TABLE `Element_Panier`
   ADD CONSTRAINT `fk_Element_Panier_1` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`);
 
 --
--- Contraintes pour la table `paeiment`
+-- Constraints for table `Paeiment`
 --
-ALTER TABLE `paeiment`
+ALTER TABLE `Paeiment`
   ADD CONSTRAINT `fk_Paeiment_1` FOREIGN KEY (`id_comnd`) REFERENCES `commande` (`id_comnd`);
 
 --
--- Contraintes pour la table `panier`
+-- Constraints for table `Panier`
 --
-ALTER TABLE `panier`
-  ADD CONSTRAINT `fk_Panier_1` FOREIGN KEY (`client_id`) REFERENCES `client` (`id_client`),
-  ADD CONSTRAINT `fk_Panier_2` FOREIGN KEY (`element_panier`) REFERENCES `element_panier` (`idElement_Panier`);
+ALTER TABLE `Panier`
+  ADD CONSTRAINT `fk_Panier_1` FOREIGN KEY (`client_id`) REFERENCES `Client` (`id_client`),
+  ADD CONSTRAINT `fk_Panier_2` FOREIGN KEY (`element_panier`) REFERENCES `Element_Panier` (`idElement_Panier`);
 
 --
--- Contraintes pour la table `stock`
+-- Constraints for table `Stock`
 --
-ALTER TABLE `stock`
+ALTER TABLE `Stock`
   ADD CONSTRAINT `fk_Stock_1` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`);
 COMMIT;
 

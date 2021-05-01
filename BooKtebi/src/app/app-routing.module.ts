@@ -13,6 +13,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ItemComponent } from './components/item/item.component';
 import { BasketComponent } from './components/basket/basket.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { CartComponent } from './components/cart/cart.component';
 const routes: Routes = [
   {
     path: '',
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
   },
   {
     path: 'login',
