@@ -41,7 +41,7 @@ import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
-    HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,ItemComponent,BasketComponent,
+    HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,ItemComponent,
     ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent, CartComponent],
   imports: [
     BrowserModule,
