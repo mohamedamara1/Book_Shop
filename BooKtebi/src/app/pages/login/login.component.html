@@ -3,7 +3,7 @@
     <div class="col-md-6">
       <div class="login">
         <div class="container">
-          <form [formGroup]="loginForm" (ngSubmit)="login()" class="loginForm">
+          <form class="loginForm">
             <div class="row">
               <div class="input-wrapper col-md-12">
                 <input
@@ -11,7 +11,7 @@
                   name="email"
                   class="form-control"
                   placeholder="E-mail Adress"
-                  formControlName="email"
+                  id="mail"
                 />
               </div>
               <div class="input-wrapper col-md-12">
@@ -20,7 +20,7 @@
                   name="password"
                   class="form-control"
                   placeholder="Password"
-                  formControlName="password"
+                  id="pass"
                 />
               </div>
               <div class="input-wrapper radio-wrapper col-md-12">
@@ -43,8 +43,9 @@
                   <span class="checkmark"></span>
                 </label>
               </div>
+              <div id="wrong"></div>
             </div>
-            <button type="submit" class="login-btn">Log in</button>
+            <button (click)='login()' class="login-btn">Log in</button>
 
             <a href="#" class="forgot">Forgot Password ?</a>
             <div class="signup-wrapper mt-5">

@@ -21,7 +21,10 @@ const routes: Routes = [
       {path:'products', component:NewProductsComponent}
     ]
   },
-
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
   {
     path: 'signup',
     component: SignupComponent,
