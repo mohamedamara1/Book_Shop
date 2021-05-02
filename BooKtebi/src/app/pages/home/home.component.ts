@@ -7,6 +7,12 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HomeComponent implements OnInit {
   constructor() {}
+  public url = ['/login']
+  ngOnInit(): void {
 
-  ngOnInit(): void {}
+    var isloggedin = localStorage.getItem("isLoggedin" );
+    if (isloggedin =='true') {
+      this.url = ['/generalsettings']
+    }
+  }
 }
