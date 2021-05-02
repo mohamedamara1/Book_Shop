@@ -1,186 +1,33 @@
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
-    
+
+.card{
+  margin: 2%;
+  border-width: 0.1cm;
+  border-color:grey;
+}
+.booktitle{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.firstbox {
-    position: relative;
-    top: 0;
-    left: 70px;
-    border: 3px solid black;
-    width: 90%;
-    height: 900px;
-
+.but{
+  background-color: #E8EFFC;
+  font-style: normal;
+  font-weight: normal;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  letter-spacing: 0.05em;
+  width: 170px;
+  height: 60px;
+  border-radius: 13px;
+  margin-left: 20px;
+  margin-top: 5%;
 }
-
-.all {
-  position: relative;
-  top: -250px;
-  left: 250px;
-}
-.detail {
-    position: relative;
-    top: 20px;
-    left: 20px;
-  }
-.bookcover {
-    position: relative;
-    top: 310px;
-    left: -200px;
-  }
-.price {
-    position: relative;
-    top: -400px;
-    left: 1200px;
-  }
-
-  .ups {
-    position: relative;
-    top: -50px;
-    left: 100px;
-  }
-  .up {
-    position: relative;
-    top: -40px;
-    left: 0px;
-  }
-  .down {
-    position: relative;
-    top: 35px;
-    left: -55px;
-  }
-
-  .k{
-      font-size: 35px;
-      position: relative;
-      top:  0px;
-      left: -25px;
-  }
-
-  .pr{
-    font-size: 40px;
-    position: relative;
-    top:  20px;
-    left: -35px;
-  }
-
-  .all hr{
-    position: absolute;
-    width: 542px;
-    height: 0px;
-    border: 1px solid #E5E5E5;
-    left:  0px;
-    top: 370px;
-  }
-
-  .but{
-    background-color: #E8EFFC;
-    font-style: normal;
-    font-weight: normal;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    letter-spacing: 0.05em;
-    width: 170px;
-    height: 60px;
-    border-radius: 13px;
-    margin-left: 50px;
-}
-
-
 
 .but1{
-    position: relative;
-    top:  10px;
-    left: 80px;
-    background-color: #9E8BFF;
-    width: 240px;
-    height: 51px;
-    font-size: 22px;
-    border-radius: 8px;
+  top:  10px;
+  left: 80px;
+  background-color: #9E8BFF;
+  width: 240px;
+  height: 51px;
+  font-size: 22px;
+  border-radius: 8px;
+  margin-top: 10%;
 }
-
-.buts{
-    position: relative;
-    top:  -300px;
-    left: 300px;
-}
-
-
-.hr{
-    position: absolute;
-    width: 542px;
-    height: 0px;
-    border: 1px solid #E5E5E5;
-    left:  100px;
-    top: 450px;
-  }
-
-  .des {
-    position: relative;
-    top:  -250px;
-    left:  100px;
-  }
-
-  .hr2{
-    position: absolute;
-    width: 542px;
-    height: 0px;
-    border: 1px solid #E5E5E5;
-    left: 100px;
-    top: 620px;
-  }
-
-  .details {
-    position: relative;
-    top:  -200px;
-    left:  100px;
-  }
-
-  .bloc2{
-    position: relative;
-    top: -76px;
-    left: 350px;
-  }
-
-  .footer{
-    position: relative;
-    top: -200px;
-    left: 0px;
-    background-color: #9E8BFF;
-    background: rgba(213, 224, 239, 0.13);
-    
-  }
-
-  .format {
-    position: relative;
-    top:  -50px;
-    left: 900px;
-  }
-
-  .about{
-    position: relative;
-    top: -145px;
-    left: 400px;
-  }
-
-  .terms{
-    position: relative;
-    top: -290px;
-    left: 700px;
-  }
-
-  .copyright{
-    position: relative;
-    top: -250px;
-    left: 0px;
-  }
-
-  .pages{
-    position: relative;
-    top: 100px;
-    left: 0px;  
-  }
