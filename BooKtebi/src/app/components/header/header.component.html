@@ -20,16 +20,16 @@
     </div>
 
     <div class="nav-item">
-      <a [routerLink]="['/basket']">
+      <a [routerLink]="['/cart']">
         <i class="fa fa-shopping-cart"></i>
       </a>
 
     </div>
-
+    <app-widget-search-bar></app-widget-search-bar>
     <div class="nav-item"><i class="fa fa-search"></i></div>
 
     <div class="nav-item">
-     <a [routerLink]="['/generalsettings']">
+     <a  routerLink={{this.url}}>
       <i class="fa fa-user"></i>
     </a>
     </div>

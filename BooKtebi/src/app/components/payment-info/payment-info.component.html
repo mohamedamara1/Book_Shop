@@ -2,24 +2,24 @@
   <div class="row">
     <h1 class="title">Payment Informations</h1>
   </div>
+  <!--
   <form>
     <div class="row mt-3">
-      <label class="col-4 label-text" for="name-card"> Name on Card </label>
+      <label class="col-4 label-text" for="name-card"> </label>
       <input class="input-box" id="name-card" type="text" />
     </div>
 
     <div class="row mt-3">
-      <label class="col-4 label-text" for="card-number"> Card Number </label>
       <input class="input-box" id="card-number" type="number" />
     </div>
 
     <div class="row mt-3">
-      <label class="col-4 label-text" for="expiry-month"> Expiry Month </label>
+      <label class="col-4 label-text" for="expiry-month"></label>
       <input class="input-box" id="expiry-month" type="text" />
     </div>
 
     <div class="row mt-3">
-      <label class="col-4 label-text" for="expiry-year"> Expiry year </label>
+      <label class="col-4 label-text" for="expiry-year">  </label>
       <input class="input-box" id="expiry-year" type="text" />
     </div>
 
@@ -29,6 +29,96 @@
     </div>
     <div class="d-flex flex-row justify-content-center align-items-center mt-5">
       <button class="save-button" type="submit">Save</button>
+    </div>
+  </form>
+    --------
+
+-->
+  <form [formGroup]="payementInfo" class="row g-3" (ngSubmit)="saveSettings()">
+    <div class="col-md-6 mt-3">
+      <label for="cardName" class="form-label"> Name on Card</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cardName"
+        [ngClass]="{
+          'is-invalid': cardNameValidation
+        }"
+        required
+        formControlName="cardName"
+      />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="col-md-6 mt-3">
+      <label for="cardNumber" class="form-label">Card Number</label>
+      <input
+        type="number"
+        class="form-control"
+        id="cardNumber"
+        [ngClass]="{
+          'is-invalid': cardNumberValidation
+        }"
+        required
+        formControlName="cardNumber"
+      />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+
+    <div class="col-md-6 mt-3">
+      <label for="expiryMonth" class="form-label"> Expiry Month </label>
+      <input
+        type="month"
+        class="form-control"
+        id="expiryMonth"
+        aria-describedby="expiryMonth"
+        required
+        [ngClass]="{
+          'is-invalid': expiryMonthValidation
+        }"
+        formControlName="expirymonth"
+      />
+      <div id="validationServer03Feedback" class="invalid-feedback">
+        Please provide a valid Expiry Month .
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-3">
+      <label for="expiryYear" class="form-label">Expiry year</label>
+      <input
+        type="number"
+        class="form-control"
+        id="expiryYear"
+        aria-describedby="validationServer05Feedback"
+        required
+        [ngClass]="{
+          'is-invalid': expiryYearValidation
+        }"
+        formControlName="expiryYear"
+      />
+      <div id="validationServer05Feedback" class="invalid-feedback">
+        Please provide a valid Expiry year.
+      </div>
+    </div>
+    <div class="col-md-4 mt-3">
+      <label for="cvv" class="form-label">CVV</label>
+      <input
+        type="number"
+        class="form-control"
+        id="cvv"
+        aria-describedby="validationServer05Feedback"
+        required
+        [ngClass]="{
+          'is-invalid': cvvValidation
+        }"
+        formControlName="cvv"
+      />
+      <div id="validationServer05Feedback" class="invalid-feedback">
+        Please provide a valid cvv.
+      </div>
+    </div>
+
+    <div class="col-12 mt-3">
+      <button class="btn btn-primary" type="submit">Save</button>
     </div>
   </form>
 </div>

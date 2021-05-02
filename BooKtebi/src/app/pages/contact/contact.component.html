@@ -8,39 +8,76 @@
 
     <div class="mt-5 row">
 
-      <form class="text-center border border-light p-5 col-md-4 offset-1 " [formGroup]="contactForm" >
+      <form class="text-center border border-light p-5 col-md-4 offset-1 "(ngSubmit)="onSubmit()" [formGroup]="contactForm" >
         <p class="h4 mb-4">Contact us</p>
 
         <!-- Name -->
-        <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
-          class="form-control mb-4" placeholder="Name">
-
+        <div class="form-group" [ngClass]="{'has-error': ((contactForm.get('contactFormName').touched ||
+        contactForm.get('contactFormName').dirty) &&
+        contactForm.get('contactFormName').errors)}">
+        <input type="text" formControlName="contactFormName" id="ContactFormName" mdbInput
+          class="form-control mb-4"   placeholder="Name">
+          <span class="help-block"
+          *ngIf="((contactForm.get('contactFormName').touched ||
+                   contactForm.get('contactFormName').dirty) &&
+                   contactForm.get('contactFormName').errors)">
+          <span *ngIf="contactForm.get('contactFormName').errors.required" class="text-danger">
+            Full Name is required
+          </span>
+          </span>
+          </div>
         <!-- Email -->
-        <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
-          class="form-control mb-4" placeholder="E-mail">
 
+        <div class="form-group" [ngClass]="{'has-error': ((contactForm.get('contactFormEmail').touched ||
+        contactForm.get('contactFormEmail').dirty) &&
+        contactForm.get('contactFormEmail').errors)}">
+        <input type="text" formControlName="contactFormEmail"  id="defaultContactFormEmail" mdbInput
+          class="form-control mb-4" value="email" placeholder="E-mail">
+          <span class="help-block"
+          *ngIf="((contactForm.get('contactFormEmail').touched ||
+                    contactForm.get('contactFormEmail').dirty) &&
+                    contactForm.get('contactFormEmail').errors)">
+          <span *ngIf="contactForm.get('contactFormEmail').errors.required" class="text-danger">
+            Email is required
+          </span>
+          <span *ngIf="contactForm.get('contactFormEmail').errors.email" class="text-danger">
+            Please use a proper Email Address
+          </span>
+          </span>
+          </div>
         <!-- Subject -->
         <label>Subject</label>
-        <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+        <select formControlName="contactFormSubjects" value="2"  class="browser-default custom-select mb-4">
           <option value="" disabled>Choose option</option>
           <option value="1" selected>Feedback</option>
           <option value="2">Report a bug</option>
           <option value="3">Feature request</option>
-          <option value="4">Feature request</option>
         </select>
 
         <!-- Message -->
-        <div class="form-group">
-          <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
-            rows="3" placeholder="Message"></textarea>
-        </div>
-
+        <div class="form-group" [ngClass]="{'has-error': ((contactForm.get('contactFormMessage').touched ||
+        contactForm.get('contactFormMessage').dirty) &&
+        contactForm.get('contactFormMessage').errors)}">
+        <textarea formControlName="contactFormMessage" class="form-control rounded-0"  mdbInput id="exampleFormControlTextarea2"
+            rows="3" value="message"placeholder="Message"></textarea>
+          <span class="help-block"
+          *ngIf="((contactForm.get('contactFormMessage').touched ||
+                    contactForm.get('contactFormMessage').dirty) &&
+                    contactForm.get('contactFormMessage').errors)">
+          <span *ngIf="contactForm.get('contactFormMessage').errors.required" class="text-danger">
+            Message is required
+          </span>
+          <span *ngIf="contactForm.get('contactFormMessage').errors.minlength" class="text-danger">
+            Your message should have atleast 20 letters!
+          </span>
+          </span>
+          </div>
         <!-- Copy -->
-        <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox>
+        <mdb-checkbox formControlName="contactFormCopy" [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox>
 
         <!-- Send button -->
-        <button id ="send_button" mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect "
-          mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
+        <button id ="send_button" [disabled]="contactForm.invalid" mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect "
+          mdbWavesEffect type="submit" >Send</button>
 
       </form>
       <div class="col-md-6  offset-1 d-flex justify-content-center ">

@@ -1,0 +1,6 @@
+[
+  {"id" : 1, "title" : "kteb l rojla", "price": "20", "date_ajout" : "25/20/2000", "stars" : 3, "description":"haha testrazrazroak", "product_details":"haha testrazrazroak"},
+  {"id" : 2, "title" : "kteb l sade9a","price": "20", "date_ajout" : "25/20/2000", "stars" : 2, "description":"haha zdfzafzafazf", "product_details":"haha testrazrazroak"},
+  {"id" : 3, "title" : "kteb l 7ob", "price": "20","date_ajout" : "25/99/2000", "stars" : 4, "description":"haha zegzeg", "product_details":"haha testrazrazroak"},
+  {"id" : 4, "title" : "kteb l jaw", "price": "20","date_ajout" : "90/20/2000", "stars" : 5, "description":"lorem testrazrazroak", "product_details":"haha testrazrazroak"}
+  ]

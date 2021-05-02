@@ -1,102 +1,61 @@
-<div class="pages">
-    <div class="firstbox">
-     <div class="all">
-         <img class="bookcover" src="assets/img/bookcopy.png" alt="book" class="">
-         <h1 class="titlee">Where the crawdels sing</h1>
-         <p class="format"> Selected Format: Hardcover</p>
-         <hr>
-         <div class="detail">
-             <img src="assets/img/stars.png" alt="">
-              <p class="">
-                Paperback  English
-                <br>
-             </p>
-              <p class="">
-                By (author)  Delia Owens
-             </p>
-         </div>
-     </div>
-     <div class="price">
-        <h1 class="pr">$ 19.9</h1>
-            <div class="ups">
-                <img src="assets/img/up.png" alt="up" class="up">
-                        <span class="k">
-                                1
-                         </span>
-                <img src="assets/img/Down.png" alt="Down" class="down">
-            </div>
-    </div>
-    <div >
+<div class="header">
+  <app-header></app-header>
+</div>
 
-     <div class="buts">
-        <button class="but">
-            hardcover <br>
-            $ 19.99
-        </button>
-        <button class="but">
-            signed book <br>
-            $ 29.99
-        </button>
-        <button class="but">
-            Donwload pdf <br>
-            $ 25.99
-        </button>
-        <button class="but1">
-            Add to cart
-        </button>
-    </div>   <!-- buttons div-->
-    <hr class="hr">
-    <div class="des">
-      <h1> Description</h1>
-      <p>
-        For years, rumors of the 'Marsh Girl' have haunted Barkley Cove, a quiet town on the North Carolina coast. <br>
-         So in late 1969, when handsome Chase Andrews is found dead, the locals immediately suspect Kya Clark, the so-called Marsh Girl. But Kya is not what they say. Sensitive and intelligent, <br>
-          she has survived for years alone in the marsh that she calls home, finding friends in the gulls and lessons in the sand. Then the time comes when she yearns to be touched and loved. <br>
-           When two young men from town become intrigued by her wild beauty, Kya opens herself to a new life - until the unthinkable happens.
-      </p>
-    </div>
-    <hr class="hr2">
-    <div class="details">
-        <h1>Product Details</h1>
-        <div class="bloc1">
-            Format: Paperback | 384 pages <br>
+<div class="card">
+  <div class="row">
+      <div class="col-3">
+      <img class="bookcover" src="assets/img/bookcopy.png" alt="book" class="" style="width: 180px; margin: 1%;">
+  </div>
+
+  <div class="col-6" style="margin-top: 3%;">
+      <h4 class="booktitle">{{book.title}}</h4>
+      <p>Paperback | English</p>
+      <p>By (author) {{book.author_name}}</p>
+      <button class="but">Hardcover <br> 19.99$</button>
+      <button class="but"> signed book <br>
+        $ 29.99</button>
+      <button class="but"> Donwload pdf <br>
+        $ 25.99</button>
+  </div>
+  
+  <div class="col-3" style="margin-top: 3%;">
+      <p>Selected Format: Hardcover</p>
+      <h2>$ {{book.price}} </h2>
+      <button class="but1" (click)="addProductToCart(book)"> Add To Cart</button>
+  </div>
+  </div>  
+
+  <div class="row" style="margin: 1%;">
+      <h3>Description  {{book.description}}</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="row" style="margin: 1%;">
+        <h3>Product Details</h3>
+        <br>
+      
+
+           <p> <br> <br> Format: Paperback | 384 pages <br>
             Dimensions: 126 x 194 x 28mm | 303g <br>
             Publication: date 20 Dec 2019 <br>
-            Publisher: Little, Brown Book Group
+            Publisher: Little, Brown Book Group <br></p> 
+     
+              <p style="margin-left: 20%;"> <br> <br>
+                  Publication City/Country: London, United Kingdom <br>
+                  Language: English <br>
+                  ISBN10: 1472154665 <br>
+                  ISBN13: 9781472154668 <br>
+                  Bestsellers: rank 2 <br> </p>
+       
+  </div>
 
-        </div>
-        <div class="bloc2">
-            Publication City/Country: London, United Kingdom <br>
-            Language: English <br>
-            ISBN10: 1472154665 <br>
-            ISBN13: 9781472154668 <br>
-            Bestsellers: rank 2 <br>
+</div>
 
-        </div>
-    </div>
-
-    </div> <!-- firstbox div-->
-
-    <div class="footer">
-              <div class="">
-                <h3>Customer Services</h3>
-                <p>Lorem upsum </p>
-                <p> Lorem upsum </p>
-                <p> Lorem upsum </p>  </div>
-              <div class="about">
-                <h3>About us</h3>
-                <p> Lorem upsum </p>
-                <p> Lorem upsum </p>
-                <p> Lorem upsum </p>
-              </div>
-              <div class="terms">
-               <h3>Terms Of Use</h3>
-                <p>Lorem upsum </p>
-                <p> Lorem upsum </p>
-                <p> Lorem upsum </p>
-              </div>
-          <div class="copyright">
-            <hr />
-            <strong>Copyright © 2021 BookShop</strong>
-          </div>
-        </div>
+<div>
+  <app-footer></app-footer>
+</div>
