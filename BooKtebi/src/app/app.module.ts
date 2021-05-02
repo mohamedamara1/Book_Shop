@@ -36,13 +36,19 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './services/book.service';
 import { SearchModule } from './components/search/search.module';
+import { CartComponent } from './components/cart/cart.component';
+import { ShoppingCartService } from './services/shopping-cart.service';
+import { LocalStorageServie, StorageService } from './services/storage.service';
+import { DeliveryOptionsDataService } from './services/delivery-options.service';
+import { CachcingServiceBase } from './services/caching.service';
+import { ConnectionService } from './services/connection.service';
 
 
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, SignupComponent, GeneralsettingsComponent,
     HomeComponent, HeaderComponent, HeroComponent, NewProductsComponent,ItemComponent,BasketComponent,
-    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent],
+    ProductComponent, BestSellingComponent, FooterComponent, LeftBarComponent, ProfileSettingsComponent, PaymentInfoComponent, DeleteAccountComponent, AdminloginComponent, ContactComponent, CartComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -58,7 +64,19 @@ import { SearchModule } from './components/search/search.module';
         SearchModule
 
   ],
-  providers: [BookService],
+  providers: [BookService,
+    ShoppingCartService,
+    DeliveryOptionsDataService,
+    ConnectionService,
+    LocalStorageServie,
+    { provide: StorageService, useClass: LocalStorageServie },
+    {
+      deps: [StorageService, BookService, DeliveryOptionsDataService],
+      provide: ShoppingCartService,
+      useClass: ShoppingCartService
+    }
+
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

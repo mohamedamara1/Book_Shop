@@ -1,21 +1,23 @@
 from typing import Optional
-from fastapi import FastAPI
+from fastapi import FastAPI ,Request
 from datetime import datetime
 from pydantic import BaseModel
-
 from fastapi import Depends
-
 from fastapi.middleware import Middleware
 from fastapi.middleware.cors import CORSMiddleware
-
 import mysql.connector
 import json
 import base64
 
-middleware = [ Middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=True, allow_methods=['*'], allow_headers=['*'])]
 
-app = FastAPI(middleware=middleware)
-
+app = FastAPI() 
+origins = ['http://localhost:4200',] 
+app.add_middleware(     
+  CORSMiddleware,     
+  allow_origins=origins,     
+  allow_credentials=True,     
+  allow_methods=["*"],     
+  allow_headers=["*"], )
 
 
 
@@ -27,9 +29,9 @@ def get_prods():
   mydb = mysql.connector.connect(host="localhost",user="root",password="",database="bookshop")
   mycursor = mydb.cursor()
   mycursor.execute(
-        f"SELECT book_id, book_title,price, date_ajout,rating FROM book where new = 1;" )
+        f"SELECT book_id, book_title,price, date_ajout,rating, imageurl FROM book where new = 1;" )
   #row_headers=[x[0]for x in mycursor.description]
-  row_headers = ['id', 'name', 'price', 'date', 'stars']
+  row_headers = ['id', 'name', 'price', 'date', 'stars', 'imageurl']
   result = mycursor.fetchall()
   json_data=[]
 
@@ -47,9 +49,9 @@ def get_best():
   mydb = mysql.connector.connect(host="localhost",user="root",password="",database="bookshop")
   mycursor = mydb.cursor()
   mycursor.execute(
-        f"SELECT book_id, book_title,price, date_ajout,rating FROM book where bestselling = 1;" )
-  #row_headers=[x[0]for x in mycursor.description]
-  row_headers = ['id', 'name', 'price', 'date', 'stars']
+        f"SELECT book_id, book_title,price, date_ajout,rating, imageurl FROM book where bestselling = 1;" )
+  #row_headers=[x[0]for x in mycursor.description] 
+  row_headers = ['id', 'name', 'price', 'date', 'stars', 'imageurl']
 
   result = mycursor.fetchall()
   json_data=[]
@@ -61,14 +63,14 @@ def get_best():
   return y
 
 @app.get("/book")
-def get_best(bookid : str):
+def get_book(bookid : str):
 
   mydb = mysql.connector.connect(host="localhost",user="root",password="",database="bookshop")
   mycursor = mydb.cursor()
   mycursor.execute(
-        f"SELECT book_id, book_title,price, date_ajout,rating, book_description, book_writer FROM book where book_id = '{bookid}';" )
+        f"SELECT book_id, book_title,price, date_ajout,rating, book_description,book_writer, imageurl FROM book where book_id = '{bookid}';" )
   #row_headers=[x[0]for x in mycursor.description]
-  row_headers = ['id', 'title', 'price', 'date_ajout', 'stars', 'description','products_details','author_name' ]
+  row_headers = ['id', 'title', 'price', 'date', 'stars', 'description','author_name', 'imageurl' ]
 
   result = mycursor.fetchall()
   json_data=[]
@@ -150,3 +152,44 @@ def livre( message : Message):
 		return {"message" : str(e)}
 
 	return {"message": "contact request added successfuly"}
+
+
+
+
+@app.post("/register")
+async def reg(request:Request):
+    mydb = mysql.connector.connect(host = "localhost" , user = "root" , password = "" , database = "bookshop")
+    mycursor = mydb.cursor()
+    body = json.loads(await request.body())
+    mycursor.execute(f"SELECT * FROM client WHERE email = '{body['user']}'")
+    rv = mycursor.fetchone()
+    mycursor.execute(f"SELECT max(id_client) FROM client")
+    rs = int(mycursor.fetchone()[0])
+    print (rs)
+    if (rv):
+        return '{"Email already exists!"}'
+    else:
+        mycursor.execute(f"INSERT INTO `client` (`id_client`, `nom_client`, `prenom_client`, `ville`, `email`, `age`, `date_naissance`, `code_postal`, `phone`, `password` ) VALUES ('{rs+1}', '{body['last']}', '{body['first']}', '', '{body['user']}', '', '', '', '{body['phone']}', '{body['pwd']}');")
+        mydb.commit()
+        mycursor.execute(f"SELECT id_client FROM client WHERE email = '{body['user']}'")
+        row_headers=[x[0] for x in mycursor.description] 
+        rv = mycursor.fetchall()
+        json_data=[]
+        for result in rv:
+            json_data.append(dict(zip(row_headers,result)))
+        return json_data
+
+@app.post("/login")
+async def db_test(request : Request):
+
+    mydb = mysql.connector.connect(host = "localhost" , user = "root" , password = "" , database = "bookshop")
+    mycursor = mydb.cursor()
+    body = json.loads(await request.body())
+    print (body)
+    mycursor.execute(f"select CL.email, CO.password from compte CO, client CL where (CO.client_id  = CL.id_client) and (CL.email = '{body['user']}' ) and (CO.password = '{body['pwd']}')")
+    row_headers=[x[0] for x in mycursor.description] 
+    rv = mycursor.fetchall()
+    json_data=[]
+    for result in rv:
+            json_data.append(dict(zip(row_headers,result)))
+    return json_data
