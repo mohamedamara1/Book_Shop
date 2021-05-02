@@ -28,8 +28,7 @@ export class LoginComponent implements OnInit {
           response.json().then(async (data) =>{
             console.log(data);
             if (JSON.stringify(data) !="[]"){
-
-              
+              localStorage.setItem("isLoggedin" , "true");
               this.router.navigate(['/home']);
             }
             else{

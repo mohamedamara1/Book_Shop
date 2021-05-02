@@ -9,7 +9,12 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  public url = ['/login'];
   ngOnInit(): void {
-  }
 
+    var isloggedin = localStorage.getItem("isLoggedin" );
+    if (isloggedin =='true') {
+     this.url = ['/generalsettings'];
+    }
+  }
 }
