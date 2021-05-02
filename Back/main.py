@@ -29,9 +29,9 @@ def get_prods():
   mydb = mysql.connector.connect(host="localhost",user="root",password="",database="bookshop")
   mycursor = mydb.cursor()
   mycursor.execute(
-        f"SELECT book_id, book_title,price, date_ajout,rating FROM book where new = 1;" )
+        f"SELECT book_id, book_title,price, date_ajout,rating, imageurl FROM book where new = 1;" )
   #row_headers=[x[0]for x in mycursor.description]
-  row_headers = ['id', 'name', 'price', 'date', 'stars']
+  row_headers = ['id', 'name', 'price', 'date', 'stars', 'imageurl']
   result = mycursor.fetchall()
   json_data=[]
 
@@ -49,9 +49,9 @@ def get_best():
   mydb = mysql.connector.connect(host="localhost",user="root",password="",database="bookshop")
   mycursor = mydb.cursor()
   mycursor.execute(
-        f"SELECT book_id, book_title,price, date_ajout,rating FROM book where bestselling = 1;" )
-  #row_headers=[x[0]for x in mycursor.description]
-  row_headers = ['id', 'name', 'price', 'date', 'stars']
+        f"SELECT book_id, book_title,price, date_ajout,rating, imageurl FROM book where bestselling = 1;" )
+  #row_headers=[x[0]for x in mycursor.description] 
+  row_headers = ['id', 'name', 'price', 'date', 'stars', 'imageurl']
 
   result = mycursor.fetchall()
   json_data=[]
@@ -63,14 +63,14 @@ def get_best():
   return y
 
 @app.get("/book")
-def get_best(bookid : str):
+def get_book(bookid : str):
 
   mydb = mysql.connector.connect(host="localhost",user="root",password="",database="bookshop")
   mycursor = mydb.cursor()
   mycursor.execute(
-        f"SELECT book_id, book_title,price, date_ajout,rating, book_description, book_writer FROM book where book_id = '{bookid}';" )
+        f"SELECT book_id, book_title,price, date_ajout,rating, book_description,book_writer, imageurl FROM book where book_id = '{bookid}';" )
   #row_headers=[x[0]for x in mycursor.description]
-  row_headers = ['id', 'title', 'price', 'date_ajout', 'stars', 'description','products_details','author_name' ]
+  row_headers = ['id', 'title', 'price', 'date', 'stars', 'description','author_name', 'imageurl' ]
 
   result = mycursor.fetchall()
   json_data=[]

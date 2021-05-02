@@ -10,10 +10,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
-import { ItemComponent } from './components/item/item.component';
 import { BasketComponent } from './components/basket/basket.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ItemComponent } from './components/item/item.component';
 const routes: Routes = [
   {
     path: '',
@@ -66,8 +66,7 @@ const routes: Routes = [
         ]
       },
 
-  { path: 'item', component: ItemComponent },
-  { path: 'basket', component: BasketComponent },
+  { path: 'cart', component: BasketComponent },
 
 ];
 

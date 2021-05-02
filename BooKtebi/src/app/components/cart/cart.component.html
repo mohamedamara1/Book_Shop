@@ -5,7 +5,7 @@
     <app-header></app-header>
   </div>
 
-    
+
     <!-- ========================= SECTION PAGETOP ========================= -->
     <section class="section-pagetop bg">
     <div class="container">
@@ -13,15 +13,15 @@
     </div> <!-- container //  -->
     </section>
     <!-- ========================= SECTION INTRO END// ========================= -->
-    
+
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
     <div class="container">
-    
+
     <div class="row">
         <main class="col-md-9">
     <div class="card">
-    
+
     <table class="table table-borderless table-shopping-cart">
     <thead class="text-muted">
     <tr class="small text-uppercase">
@@ -32,80 +32,58 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+      <tr *ngFor="let cartitem of cartItems">
         <td>
             <figure class="itemside">
-                <div class="aside"><img src="assets/img/bookcopy.png" class="img-sm"></div>
+                <div class="aside"><img [src]="cartitem.product.imageurl" class="img-sm"></div>
                 <figcaption class="info">
-                    <a href="#" class="title text-dark">Where the crawdels sing</a>
+                    <a href="#" class="title text-dark">{{cartitem.product.name}}</a>
                     <p class="text-muted small">Size: XL, Color: blue, <br> Brand: Gucci</p>
                 </figcaption>
             </figure>
         </td>
-        <td> 
-            <select class="form-control">
-                <option>1</option>
-                <option>2</option>  
-                <option>3</option>  
-                <option>4</option>  
-            </select> 
-        </td>
-        <td> 
-            <div class="price-wrap"> 
-                <var class="price">$40.00</var> 
-               
-            </div> <!-- price-wrap .// -->
-        </td>
-        <td class="text-right"> 
-        <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light mr-2" data-toggle="tooltip" style="background-color: #A58FFF;"> <i class="fa fa-heart"></i></a> 
-        <a href="" class="btn btn-light"> Remove</a>
-        </td>
-    </tr>
-    <tr>
         <td>
-            <figure class="itemside">
-                <div class="aside"><img src="assets/img/book2.jpg" class="img-sm" width="200" ></div>
-                <figcaption class="info">
-                    <a href="#" class="title text-dark">Memory</a>
-                    <p class="text-muted small">Size: XL, Color: blue, <br> Brand: Gucci</p>
-                </figcaption>
-            </figure>
+          <button
+          class="btn btn-primary"
+         (click)="IncrementProduct(cartitem.product)"
+       >
+        +
+       </button>
+          {{cartitem.quantity}}
+          <button
+          class="btn btn-primary"
+         (click)="DecrementProduct(cartitem.product)"
+       >
+        -
+       </button>
         </td>
-        <td> 
-            <select class="form-control">
-                <option>1</option>
-                <option>2</option>  
-                <option>3</option>  
-                <option>4</option>  
-            </select> 
-        </td>
-        <td> 
-            <div class="price-wrap"> 
-                <var class="price">$15.00</var> 
-                
+        <td>
+            <div class="price-wrap">
+                <var class="price">{{cartitem.product.price}}DT</var>
+
             </div> <!-- price-wrap .// -->
         </td>
-        <td class="text-right"> 
-        <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light mr-2" data-toggle="tooltip" style="background-color: #A58FFF;" > <i class="fa fa-heart"></i></a> 
-        <a href="" class="btn btn-light btn-round"> Remove</a>
+        <td class="text-right">
+        <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light mr-2" data-toggle="tooltip" style="background-color: #A58FFF;"> <i class="fa fa-heart"></i></a>
+        <button class="btn btn-light" (click)="removeProductFromCart(cartitem.product, 1)">Remove</button>
         </td>
     </tr>
     <tr>
- 
+
     </tr>
     </tbody>
     </table>
-    
+
     <div class="card-body border-top">
         <a href="#" class="btn btn-primary float-md-right" style="background-color: #A58FFF;"> Make Purchase <i class="fa fa-chevron-right"></i> </a>
         <a href="#" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Continue shopping </a>
-    </div>  
+    </div>
     </div> <!-- card.// -->
-    
+
     <div class="alert alert-success mt-3" style="background-color: #E9F2FF;">
         <p class="icontext"><i class="icon text-success fa fa-truck" ></i> Free Delivery within 1-2 weeks</p>
     </div>
-    
+
         </main> <!-- col.// -->
         <aside class="col-md-3">
             <div class="card mb-3">
@@ -115,7 +93,7 @@
                         <label>Have coupon?</label>
                         <div class="input-group">
                             <input type="text" class="form-control" name="" placeholder="Coupon code">
-                            <span class="input-group-append"> 
+                            <span class="input-group-append">
                                 <button class="btn btn-primary" style="background-color: #A58FFF;">Apply</button>
                             </span>
                         </div>
@@ -127,15 +105,20 @@
                 <div class="card-body">
                         <dl class="dlist-align">
                           <dt>Total price:</dt>
-                          <dd class="text-right">USD 568</dd>
+                          <dd class="text-right">
+                            <span class="text--red text--bold js-cart-total">{{(cart | async).grossTotal}} DT</span>
+
+                          </dd>
                         </dl>
                         <dl class="dlist-align">
                           <dt>Discount:</dt>
-                          <dd class="text-right">USD 658</dd>
+                          <dd class="text-right">0 DT</dd>
                         </dl>
                         <dl class="dlist-align">
                           <dt>Total:</dt>
-                          <dd class="text-right  h5"><strong>$1,650</strong></dd>
+                          <dd class="text-right  h5"><strong>
+                            <span class="text--red text--bold js-cart-total">{{(cart | async).grossTotal }} Dt</span>
+                          </strong></dd>
                         </dl>
                         <hr>
                         <p class="text-center mb-3">
@@ -143,16 +126,16 @@
                                   <img src="assets/img/master1.png" alt="" height="60">
                            </span>
                         </p>
-                        
+
                 </div> <!-- card-body.// -->
             </div>  <!-- card .// -->
         </aside> <!-- col.// -->
     </div>
-    
+
     </div> <!-- container .//  -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
-    
+
     <!-- ========================= SECTION  ========================= -->
     <section class="section-name bg padding-y">
     <div class="container">
@@ -169,11 +152,11 @@
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    
+
     </div><!-- container // -->
     </section>
     <!-- ========================= SECTION  END// ========================= -->
-    
+
     <!-- ========================= FOOTER ========================= -->
 
 <div class="footer"><app-footer></app-footer></div>
