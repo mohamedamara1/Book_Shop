@@ -3,5 +3,6 @@ export interface IProd {
   name : string,
   price : number,
   date : string,
-  stars : number
+  stars : number,
+  imageurl : string
 }

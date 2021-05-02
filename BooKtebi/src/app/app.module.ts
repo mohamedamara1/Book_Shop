@@ -37,6 +37,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './services/book.service';
 import { SearchModule } from './components/search/search.module';
 import { CartComponent } from './components/cart/cart.component';
+import { ShoppingCartService } from './services/shopping-cart.service';
+import { LocalStorageServie, StorageService } from './services/storage.service';
+import { DeliveryOptionsDataService } from './services/delivery-options.service';
+import { CachcingServiceBase } from './services/caching.service';
+import { ConnectionService } from './services/connection.service';
 
 
 
@@ -59,7 +64,19 @@ import { CartComponent } from './components/cart/cart.component';
         SearchModule
 
   ],
-  providers: [BookService],
+  providers: [BookService,
+    ShoppingCartService,
+    DeliveryOptionsDataService,
+    ConnectionService,
+    LocalStorageServie,
+    { provide: StorageService, useClass: LocalStorageServie },
+    {
+      deps: [StorageService, BookService, DeliveryOptionsDataService],
+      provide: ShoppingCartService,
+      useClass: ShoppingCartService
+    }
+
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

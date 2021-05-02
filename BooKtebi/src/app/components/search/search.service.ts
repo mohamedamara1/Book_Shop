@@ -19,6 +19,7 @@ export class SearchService {
     price: null,
     date: null,
     stars: null,
+    imageurl: null,
   });
 
   private selectedOptions = new BehaviorSubject<IProd[]>([]);
